@@ -418,6 +418,54 @@
     .nav-brand { font-size: 0.9rem; }
   }
 
+  /* ===== ART IMAGES ===== */
+  .hero-gallery {
+    display: flex; gap: 0.75rem; margin-top: 3rem; overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+    width: 100vw; position: relative; left: 50%; transform: translateX(-50%);
+    padding: 0.5rem 0;
+  }
+  .hero-gallery-inner {
+    display: flex; gap: 0.75rem; animation: scrollGallery 40s linear infinite;
+  }
+  .hero-gallery-inner img {
+    height: 180px; width: auto; border-radius: 10px; object-fit: cover;
+    opacity: 0.7; transition: opacity 0.3s, transform 0.3s;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .hero-gallery-inner img:hover { opacity: 1; transform: scale(1.04); }
+  @keyframes scrollGallery {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .art-thumb {
+    width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.06); margin-bottom: 1rem;
+    transition: transform 0.3s, opacity 0.3s; opacity: 0.85;
+  }
+  .catalog-item:hover .art-thumb { opacity: 1; transform: scale(1.02); }
+
+  .artist-showcase {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem;
+    margin-top: 2.5rem;
+  }
+  .showcase-img {
+    width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05); opacity: 0.8;
+    transition: all 0.4s;
+  }
+  .showcase-img:hover { opacity: 1; transform: scale(1.03); border-color: rgba(201,149,106,0.3); }
+  .showcase-img.tall { aspect-ratio: 2/3; grid-row: span 2; }
+
+  .idea-art {
+    width: 100%; height: 140px; object-fit: cover; border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.05); margin-bottom: 1rem;
+    opacity: 0.75; transition: opacity 0.3s;
+  }
+  .idea-card:hover .idea-art { opacity: 0.95; }
+
   /* ===== ANIMATIONS ===== */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   .anim { animation: fadeUp 0.7s ease forwards; }
@@ -470,6 +518,32 @@
         <div class="hc-label">Part II — The Collaboration</div>
         <h3>How AI Fits Your Workflow</h3>
         <p>Not what AI replaces — what it handles so you can paint. Concrete ideas mapped to your actual process and artistic goals.</p>
+      </div>
+    </div>
+
+    <div class="hero-gallery">
+      <div class="hero-gallery-inner">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238772753-73MWM6NXSIOT12FQ16OV/DK_4_the_little_mermaid.jpg" alt="The Little Mermaid" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238746136-01CLX95835EJZZEFCUSN/DK_6_Count_of_Monte_Cristo---done-question-mark.jpg" alt="Count of Monte Cristo" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238772385-5RJ64N4ZGDBYSGK7SWW5/DK_3_MTGP_crush_of_wurms.jpg" alt="Crush of Wurms" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638206948215-CUGXDD60NUDTI74HIGEE/airhsip+-+walk+the+plank.jpg" alt="Airship Walk the Plank" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238775395-SHE7CFPFU727NANJMDTL/DK_5_the_lovebirds.jpg" alt="The Lovebirds" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207406536-DZANMJ48BBRHVGKB7TLM/Daniel-Katz-Banefire.jpg" alt="Banefire" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207408104-TV2XCT755UULYUNFDWFP/contemporary-dragon-commute.jpg" alt="Dragon Commute" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207406375-PHZJWATHUAQ2UXLVXU7T/astronaut-revised-final.jpg" alt="Astronaut" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207018665-IHERKTQIKNWSR8ZNF1NJ/along+the+river.jpg" alt="Along the River" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207407225-SIFSCY1X5MQ8PNALU842/goat-man-language-of-love-varnished.jpg" alt="Language of Love" loading="lazy">
+        <!-- Duplicate set for seamless loop -->
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238772753-73MWM6NXSIOT12FQ16OV/DK_4_the_little_mermaid.jpg" alt="The Little Mermaid" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238746136-01CLX95835EJZZEFCUSN/DK_6_Count_of_Monte_Cristo---done-question-mark.jpg" alt="Count of Monte Cristo" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238772385-5RJ64N4ZGDBYSGK7SWW5/DK_3_MTGP_crush_of_wurms.jpg" alt="Crush of Wurms" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638206948215-CUGXDD60NUDTI74HIGEE/airhsip+-+walk+the+plank.jpg" alt="Airship Walk the Plank" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238775395-SHE7CFPFU727NANJMDTL/DK_5_the_lovebirds.jpg" alt="The Lovebirds" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207406536-DZANMJ48BBRHVGKB7TLM/Daniel-Katz-Banefire.jpg" alt="Banefire" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207408104-TV2XCT755UULYUNFDWFP/contemporary-dragon-commute.jpg" alt="Dragon Commute" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207406375-PHZJWATHUAQ2UXLVXU7T/astronaut-revised-final.jpg" alt="Astronaut" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207018665-IHERKTQIKNWSR8ZNF1NJ/along+the+river.jpg" alt="Along the River" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207407225-SIFSCY1X5MQ8PNALU842/goat-man-language-of-love-varnished.jpg" alt="Language of Love" loading="lazy">
       </div>
     </div>
   </div>
@@ -534,6 +608,16 @@
         </div>
       </div>
     </div>
+
+    <div class="artist-showcase">
+      <img class="showcase-img tall" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238772753-73MWM6NXSIOT12FQ16OV/DK_4_the_little_mermaid.jpg" alt="The Little Mermaid" loading="lazy">
+      <img class="showcase-img" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238772385-5RJ64N4ZGDBYSGK7SWW5/DK_3_MTGP_crush_of_wurms.jpg" alt="Crush of Wurms" loading="lazy">
+      <img class="showcase-img" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638206948215-CUGXDD60NUDTI74HIGEE/airhsip+-+walk+the+plank.jpg" alt="Airship" loading="lazy">
+      <img class="showcase-img" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207406375-PHZJWATHUAQ2UXLVXU7T/astronaut-revised-final.jpg" alt="Astronaut" loading="lazy">
+      <img class="showcase-img" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207408104-TV2XCT755UULYUNFDWFP/contemporary-dragon-commute.jpg" alt="Dragon Commute" loading="lazy">
+      <img class="showcase-img" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238746136-01CLX95835EJZZEFCUSN/DK_6_Count_of_Monte_Cristo---done-question-mark.jpg" alt="Monte Cristo" loading="lazy">
+      <img class="showcase-img" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207406536-DZANMJ48BBRHVGKB7TLM/Daniel-Katz-Banefire.jpg" alt="Banefire" loading="lazy">
+    </div>
   </div>
 </div>
 
@@ -547,6 +631,7 @@
     </div>
     <div class="catalog-grid">
       <div class="catalog-item">
+        <img class="art-thumb" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238772753-73MWM6NXSIOT12FQ16OV/DK_4_the_little_mermaid.jpg" alt="The Little Mermaid" loading="lazy">
         <div class="cat-genre" style="color:var(--accent3);">Literary Adaptation</div>
         <h4>The Little Mermaid</h4>
         <div class="cat-desc">Reimagined fairy tale. Aquatic dreamscape with soft, diffused lighting. Romantic melancholy — the tragedy of transformation.</div>
@@ -554,6 +639,7 @@
         <div class="cat-meta"><span>Mood: Ethereal</span><span>Palette: Cool Aquatic</span></div>
       </div>
       <div class="catalog-item">
+        <img class="art-thumb" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238746136-01CLX95835EJZZEFCUSN/DK_6_Count_of_Monte_Cristo---done-question-mark.jpg" alt="Count of Monte Cristo" loading="lazy">
         <div class="cat-genre" style="color:var(--accent3);">Literary Adaptation</div>
         <h4>The Count of Monte Cristo</h4>
         <div class="cat-desc">Character study in classical drama. Dark, rich tones with strategic highlights. The weight of betrayal and revenge.</div>
@@ -561,6 +647,7 @@
         <div class="cat-meta"><span>Mood: Dramatic</span><span>Palette: Old Master</span></div>
       </div>
       <div class="catalog-item">
+        <img class="art-thumb" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238775395-SHE7CFPFU727NANJMDTL/DK_5_the_lovebirds.jpg" alt="The Lovebirds" loading="lazy">
         <div class="cat-genre" style="color:var(--warm);">Character Study</div>
         <h4>The Lovebirds</h4>
         <div class="cat-desc">Intimate dual portrait. Warm skin tones, close framing. Dan's ability to paint feeling, not just form.</div>
@@ -568,6 +655,7 @@
         <div class="cat-meta"><span>Mood: Tender</span><span>Palette: Warm Naturals</span></div>
       </div>
       <div class="catalog-item">
+        <img class="art-thumb" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238772385-5RJ64N4ZGDBYSGK7SWW5/DK_3_MTGP_crush_of_wurms.jpg" alt="Crush of Wurms" loading="lazy">
         <div class="cat-genre" style="color:var(--accent);">Game Art / Dark Fantasy</div>
         <h4>Crush of Wurms</h4>
         <div class="cat-desc">MTG-style creature piece. Writhing organic forms, dynamic diagonals. Power and chaos in controlled composition.</div>
@@ -575,6 +663,7 @@
         <div class="cat-meta"><span>Mood: Menacing</span><span>Palette: Swamp Dark</span></div>
       </div>
       <div class="catalog-item">
+        <img class="art-thumb" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207406536-DZANMJ48BBRHVGKB7TLM/Daniel-Katz-Banefire.jpg" alt="Banefire" loading="lazy">
         <div class="cat-genre" style="color:var(--accent);">Game Art / Action</div>
         <h4>Banefire</h4>
         <div class="cat-desc">Magical combat. Intense warm-to-hot color ramp with fire as narrative center. Cinematic framing.</div>
@@ -582,6 +671,7 @@
         <div class="cat-meta"><span>Mood: Explosive</span><span>Palette: Fire Spectrum</span></div>
       </div>
       <div class="catalog-item">
+        <img class="art-thumb" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638206948215-CUGXDD60NUDTI74HIGEE/airhsip+-+walk+the+plank.jpg" alt="Airship Series" loading="lazy">
         <div class="cat-genre" style="color:var(--cyan);">Steampunk / Adventure</div>
         <h4>Airship Series</h4>
         <div class="cat-desc">"Walk the Plank," "Sailing," "Towing the Ship." Cohesive retro-futurist world. Atmospheric perspective.</div>
@@ -589,6 +679,7 @@
         <div class="cat-meta"><span>Mood: Adventurous</span><span>Palette: Antique Sepia</span></div>
       </div>
       <div class="catalog-item">
+        <img class="art-thumb" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207408104-TV2XCT755UULYUNFDWFP/contemporary-dragon-commute.jpg" alt="Dragon Commute" loading="lazy">
         <div class="cat-genre" style="color:var(--success);">Whimsical / Contemporary</div>
         <h4>Contemporary Dragon Series</h4>
         <div class="cat-desc">Mythological creatures in mundane settings. Dan's humor — high technique applied to absurd premises.</div>
@@ -596,6 +687,7 @@
         <div class="cat-meta"><span>Mood: Playful</span><span>Palette: Natural + Pop</span></div>
       </div>
       <div class="catalog-item">
+        <img class="art-thumb" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207406375-PHZJWATHUAQ2UXLVXU7T/astronaut-revised-final.jpg" alt="Astronaut" loading="lazy">
         <div class="cat-genre" style="color:var(--accent2);">Sci-Fi / Solitary</div>
         <h4>Astronaut</h4>
         <div class="cat-desc">Single figure in vast space. Technical rendering meets existential quiet. Painted with precision.</div>
@@ -603,6 +695,7 @@
         <div class="cat-meta"><span>Mood: Contemplative</span><span>Palette: Deep Space</span></div>
       </div>
       <div class="catalog-item">
+        <img class="art-thumb" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638207407225-SIFSCY1X5MQ8PNALU842/goat-man-language-of-love-varnished.jpg" alt="Language of Love" loading="lazy">
         <div class="cat-genre" style="color:var(--warm);">Fantastical Realism</div>
         <h4>Language of Love / Along the River</h4>
         <div class="cat-desc">Character-driven narrative. Quirky subjects with dead-serious technique. The gap creates charm.</div>
@@ -850,12 +943,12 @@
     <div class="sec-title">Six Things We Could Build</div>
     <div class="sec-desc" style="margin-bottom:2rem;">Not hypothetical. Each buildable today. Ordered by impact — the first two could run this week.</div>
     <div class="ideas-grid">
-      <div class="idea-card"><div class="idea-number">01</div><div class="idea-icon">📸</div><h3>One Painting, Thirty Posts</h3><div class="idea-what">You finish a piece. AI generates a full month of social content: detail crops, palette analysis graphics, composition overlays, "how I built this" narrative threads. Captioned. Hashtagged. Scheduled.</div><div class="idea-how"><strong>Your input:</strong> One high-res scan + 2 sentences.<br><strong>AI output:</strong> 30 formatted posts across Instagram, LinkedIn, Pinterest.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:20%;background:var(--success);"></div></div><div class="effort-label">Low effort / High impact</div></div></div>
+      <div class="idea-card"><div class="idea-number">01</div><img class="idea-art" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1638206948215-CUGXDD60NUDTI74HIGEE/airhsip+-+walk+the+plank.jpg" alt="Airship" loading="lazy"><h3>One Painting, Thirty Posts</h3><div class="idea-what">You finish a piece. AI generates a full month of social content: detail crops, palette analysis graphics, composition overlays, "how I built this" narrative threads. Captioned. Hashtagged. Scheduled.</div><div class="idea-how"><strong>Your input:</strong> One high-res scan + 2 sentences.<br><strong>AI output:</strong> 30 formatted posts across Instagram, LinkedIn, Pinterest.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:20%;background:var(--success);"></div></div><div class="effort-label">Low effort / High impact</div></div></div>
       <div class="idea-card"><div class="idea-number">02</div><div class="idea-icon">🔍</div><h3>Opportunity Radar</h3><div class="idea-what">AI monitors Reedsy, publisher job boards, game studio art calls. Filters for your genres. Delivers weekly digest of matching opportunities with fit scores.</div><div class="idea-how"><strong>Your input:</strong> Approve your style profile once.<br><strong>AI output:</strong> Weekly email with 5–10 qualified leads.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:25%;background:var(--success);"></div></div><div class="effort-label">Low effort / High impact</div></div></div>
       <div class="idea-card"><div class="idea-number">03</div><div class="idea-icon">🌐</div><h3>Living Portfolio Site</h3><div class="idea-what">Upgrade from static gallery to searchable, filterable, story-driven experience. Each piece with process notes, genre tags, availability. SEO-optimized for art directors.</div><div class="idea-how"><strong>Your input:</strong> Your existing portfolio images.<br><strong>AI output:</strong> Complete site with copy, SEO, filtering, analytics.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:45%;background:var(--gold);"></div></div><div class="effort-label">Medium effort / High impact</div></div></div>
-      <div class="idea-card"><div class="idea-number">04</div><div class="idea-icon">🎬</div><h3>Paintings That Move</h3><div class="idea-what">Subtle animation from finished oils: flickering torchlight in Monte Cristo, drifting clouds behind airships. 10-second loops that stop the scroll.</div><div class="idea-how"><strong>Your input:</strong> High-res scans with layer notes.<br><strong>AI output:</strong> Animated loops + social-ready video cuts.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:40%;background:var(--gold);"></div></div><div class="effort-label">Medium effort / High engagement</div></div></div>
-      <div class="idea-card"><div class="idea-number">05</div><div class="idea-icon">📖</div><h3>Narrative Prompt Engine</h3><div class="idea-what">AI generates rich scene descriptions calibrated to your palette, composition style, genre sweet spots. "A scholar descends a spiral staircase carved from living wood..." Fuel for personal work.</div><div class="idea-how"><strong>Your input:</strong> Select mood/genre/complexity.<br><strong>AI output:</strong> 5 detailed scene prompts with reference boards.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:30%;background:var(--success);"></div></div><div class="effort-label">Low effort / Creative fuel</div></div></div>
-      <div class="idea-card"><div class="idea-number">06</div><div class="idea-icon">🏛️</div><h3>Immersive Gallery Experience</h3><div class="idea-what">3D web gallery. Designed environment with lighting, ambient sound, guided tours by theme. Your own exhibition, open 24/7, shareable by link.</div><div class="idea-how"><strong>Your input:</strong> Curated selection of 15–20 pieces.<br><strong>AI output:</strong> Complete 3D gallery with narrated tour.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:70%;background:var(--accent3);"></div></div><div class="effort-label">Higher effort / Showcase piece</div></div></div>
+      <div class="idea-card"><div class="idea-number">04</div><img class="idea-art" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238746136-01CLX95835EJZZEFCUSN/DK_6_Count_of_Monte_Cristo---done-question-mark.jpg" alt="Monte Cristo" loading="lazy"><h3>Paintings That Move</h3><div class="idea-what">Subtle animation from finished oils: flickering torchlight in Monte Cristo, drifting clouds behind airships. 10-second loops that stop the scroll.</div><div class="idea-how"><strong>Your input:</strong> High-res scans with layer notes.<br><strong>AI output:</strong> Animated loops + social-ready video cuts.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:40%;background:var(--gold);"></div></div><div class="effort-label">Medium effort / High engagement</div></div></div>
+      <div class="idea-card"><div class="idea-number">05</div><img class="idea-art" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238772753-73MWM6NXSIOT12FQ16OV/DK_4_the_little_mermaid.jpg" alt="Little Mermaid" loading="lazy"><h3>Narrative Prompt Engine</h3><div class="idea-what">AI generates rich scene descriptions calibrated to your palette, composition style, genre sweet spots. "A scholar descends a spiral staircase carved from living wood..." Fuel for personal work.</div><div class="idea-how"><strong>Your input:</strong> Select mood/genre/complexity.<br><strong>AI output:</strong> 5 detailed scene prompts with reference boards.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:30%;background:var(--success);"></div></div><div class="effort-label">Low effort / Creative fuel</div></div></div>
+      <div class="idea-card"><div class="idea-number">06</div><img class="idea-art" src="https://images.squarespace-cdn.com/content/v1/5b1b5878a2772c6f24e16f07/1674238772385-5RJ64N4ZGDBYSGK7SWW5/DK_3_MTGP_crush_of_wurms.jpg" alt="Crush of Wurms" loading="lazy"><h3>Immersive Gallery Experience</h3><div class="idea-what">3D web gallery. Designed environment with lighting, ambient sound, guided tours by theme. Your own exhibition, open 24/7, shareable by link.</div><div class="idea-how"><strong>Your input:</strong> Curated selection of 15–20 pieces.<br><strong>AI output:</strong> Complete 3D gallery with narrated tour.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:70%;background:var(--accent3);"></div></div><div class="effort-label">Higher effort / Showcase piece</div></div></div>
     </div>
     <div class="cta-block">
       <h3>This whole page is the demo</h3>

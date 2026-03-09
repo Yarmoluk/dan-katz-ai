@@ -53,24 +53,24 @@
     background: rgba(8,9,13,0.92); backdrop-filter: blur(24px);
     border-bottom: 1px solid rgba(99,102,241,0.1);
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 2.5rem; height: 56px;
+    padding: 0 2rem; height: 56px;
   }
   .nav-brand {
-    font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.15rem;
-    letter-spacing: -0.02em;
+    font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem;
+    letter-spacing: -0.02em; white-space: nowrap;
   }
   .nav-brand .dk { color: var(--oil); }
-  .nav-brand .sep { color: var(--dim); margin: 0 0.4rem; font-weight: 300; }
+  .nav-brand .sep { color: var(--dim); margin: 0 0.3rem; font-weight: 300; }
   .nav-brand .ai { color: var(--accent); }
-  .nav-tabs { display: flex; gap: 0; }
+  .nav-tabs { display: flex; gap: 0; flex-wrap: nowrap; overflow-x: auto; }
   .nav-tab {
-    background: none; border: none; color: var(--dim); padding: 1rem 1.25rem;
-    font-family: inherit; font-size: 0.82rem; font-weight: 500; cursor: pointer;
+    background: none; border: none; color: var(--dim); padding: 1rem 0.9rem;
+    font-family: inherit; font-size: 0.72rem; font-weight: 500; cursor: pointer;
     letter-spacing: 0.03em; text-transform: uppercase; transition: all 0.25s;
-    position: relative;
+    position: relative; white-space: nowrap;
   }
   .nav-tab::after {
-    content: ''; position: absolute; bottom: 0; left: 1.25rem; right: 1.25rem;
+    content: ''; position: absolute; bottom: 0; left: 0.9rem; right: 0.9rem;
     height: 2px; background: var(--accent); transform: scaleX(0);
     transition: transform 0.25s;
   }
@@ -78,8 +78,8 @@
   .nav-tab.active { color: var(--text); }
   .nav-tab.active::after { transform: scaleX(1); }
   .part-indicator {
-    font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 4px;
-    margin-left: 0.5rem; font-weight: 600; vertical-align: middle;
+    font-size: 0.55rem; padding: 0.1rem 0.35rem; border-radius: 3px;
+    margin-left: 0.3rem; font-weight: 700; vertical-align: middle;
   }
   .part-1 { background: rgba(201,149,106,0.15); color: var(--oil); }
   .part-2 { background: rgba(99,102,241,0.15); color: var(--accent); }
@@ -142,7 +142,6 @@
   /* ===== COMMON ===== */
   .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
   .section-pad { padding: 100px 0; }
-
   .sec-label {
     font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
     font-weight: 700; margin-bottom: 0.75rem;
@@ -152,19 +151,15 @@
     line-height: 1.15; margin-bottom: 1rem;
   }
   .sec-desc { color: var(--muted); font-size: 1.05rem; line-height: 1.6; max-width: 600px; }
-
   .divider {
     width: 100%; height: 1px; margin: 0;
     background: linear-gradient(90deg, transparent, rgba(99,102,241,0.15), transparent);
   }
 
-  /* ===== PART 1: THE ARTIST ===== */
-
-  /* --- Artist Profile Block --- */
+  /* ===== PART 1: ARTIST ===== */
   .artist-profile {
     display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
   }
-  .artist-bio h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 1.5rem; }
   .bio-text { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem; }
   .bio-text strong { color: var(--text); font-weight: 600; }
   .bio-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
@@ -172,7 +167,6 @@
     padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500;
     border: 1px solid rgba(255,255,255,0.08); color: var(--muted);
   }
-
   .artist-facts { display: flex; flex-direction: column; gap: 1.25rem; }
   .fact-card {
     background: var(--surface); border: 1px solid rgba(255,255,255,0.04);
@@ -185,7 +179,7 @@
   .fact-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem; }
   .fact-card p { font-size: 0.8rem; color: var(--dim); line-height: 1.45; }
 
-  /* --- Portfolio Catalog --- */
+  /* ===== PORTFOLIO CATALOG ===== */
   .catalog-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
     background: rgba(255,255,255,0.03); border-radius: 16px; overflow: hidden;
@@ -203,21 +197,17 @@
   .catalog-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
   .catalog-item .cat-desc { font-size: 0.8rem; color: var(--dim); line-height: 1.5; }
   .catalog-item .cat-meta {
-    margin-top: 0.75rem; font-size: 0.7rem; color: var(--dim);
-    display: flex; gap: 1rem;
+    margin-top: 0.75rem; font-size: 0.7rem; color: var(--dim); display: flex; gap: 1rem;
   }
-  .catalog-item .cat-swatch {
-    display: flex; gap: 4px; margin-top: 0.6rem;
-  }
+  .catalog-item .cat-swatch { display: flex; gap: 4px; margin-top: 0.6rem; }
   .swatch {
     width: 14px; height: 14px; border-radius: 3px;
     border: 1px solid rgba(255,255,255,0.1);
   }
 
-  /* --- Style DNA --- */
+  /* ===== STYLE DNA ===== */
   .style-dna {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
-    margin-top: 2.5rem;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2.5rem;
   }
   .dna-card {
     background: var(--surface); border-radius: 14px; padding: 1.75rem;
@@ -227,13 +217,52 @@
     height: 80px; margin-bottom: 1rem; display: flex; align-items: flex-end;
     justify-content: center; gap: 4px;
   }
-  .dna-bar {
-    width: 8px; border-radius: 4px 4px 0 0; transition: height 0.8s ease;
-  }
+  .dna-bar { width: 8px; border-radius: 4px 4px 0 0; transition: height 0.8s ease; }
   .dna-card h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.3rem; }
   .dna-card p { font-size: 0.75rem; color: var(--dim); }
 
-  /* --- Knowledge Graph (Part 1 version) --- */
+  /* ===== VOICE ===== */
+  .voice-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem;
+  }
+  .voice-card {
+    background: var(--surface); border-radius: 16px; padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .voice-card blockquote {
+    font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic;
+    color: var(--oil); line-height: 1.6; margin-bottom: 1rem;
+    padding-left: 1.25rem; border-left: 2px solid rgba(201,149,106,0.3);
+  }
+  .voice-card .analysis { font-size: 0.8rem; color: var(--dim); line-height: 1.6; }
+  .voice-card .analysis strong { color: var(--muted); }
+
+  /* ===== ART GRAPH ===== */
+  #ag-container {
+    width: 100%; height: 600px; border-radius: 16px;
+    background: var(--surface); border: 1px solid rgba(255,255,255,0.04);
+    position: relative; overflow: hidden; margin-top: 2.5rem;
+  }
+  #ag-canvas { width: 100%; height: 100%; }
+  .ag-overlay {
+    position: absolute; padding: 1rem 1.25rem; border-radius: 12px;
+    background: rgba(8,9,13,0.92); backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.06); font-size: 0.8rem;
+  }
+  .ag-legend { bottom: 1rem; left: 1rem; }
+  .ag-detail { top: 1rem; right: 1rem; max-width: 340px; line-height: 1.5; }
+  .ag-detail h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .ag-detail .ag-swatches { display: flex; gap: 5px; margin: 0.5rem 0; }
+  .ag-detail .ag-sw { width: 20px; height: 20px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); }
+  .ag-detail .ag-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.5rem; }
+  .ag-detail .ag-tag {
+    font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 4px;
+    background: rgba(255,255,255,0.06); color: var(--muted);
+  }
+  .lg-item { display: flex; align-items: center; gap: 0.5rem; margin: 0.25rem 0; color: var(--muted); }
+  .lg-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ===== KNOWLEDGE GRAPH ===== */
   #kg-container {
     width: 100%; height: 550px; border-radius: 16px;
     background: var(--surface); border: 1px solid rgba(255,255,255,0.04);
@@ -248,123 +277,68 @@
   .kg-legend { bottom: 1rem; left: 1rem; }
   .kg-detail { top: 1rem; right: 1rem; max-width: 300px; line-height: 1.5; }
   .kg-detail h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--oil); }
-  .lg-item { display: flex; align-items: center; gap: 0.5rem; margin: 0.25rem 0; color: var(--muted); }
-  .lg-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 
-  /* --- Artistic Voice --- */
-  .voice-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem;
-  }
-  .voice-card {
-    background: var(--surface); border-radius: 16px; padding: 2rem;
-    border: 1px solid rgba(255,255,255,0.04);
-  }
-  .voice-card blockquote {
-    font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic;
-    color: var(--oil); line-height: 1.6; margin-bottom: 1rem;
-    padding-left: 1.25rem; border-left: 2px solid rgba(201,149,106,0.3);
-  }
-  .voice-card .analysis {
-    font-size: 0.8rem; color: var(--dim); line-height: 1.6;
-  }
-  .voice-card .analysis strong { color: var(--muted); }
-
-  /* ===== PART 2: WORKING TOGETHER ===== */
-
-  /* --- Philosophy Block --- */
+  /* ===== PART 2: TOGETHER — FIXED ===== */
   .philosophy {
     background: var(--surface); border-radius: 20px; padding: 3rem;
     border: 1px solid rgba(99,102,241,0.08); margin-bottom: 3rem;
   }
   .philosophy h3 {
-    font-family: 'Playfair Display', serif; font-size: 1.8rem;
-    margin-bottom: 1.25rem;
+    font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.25rem;
   }
   .philosophy p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
   .philosophy .highlight {
-    color: var(--text); font-weight: 600;
-    border-bottom: 2px solid rgba(99,102,241,0.3);
+    color: var(--text); font-weight: 600; border-bottom: 2px solid rgba(99,102,241,0.3);
   }
 
-  /* --- Workflow Mapping --- */
-  .workflow-map {
-    display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; align-items: stretch;
-    margin-top: 2.5rem;
-  }
-  .wf-column { display: flex; flex-direction: column; gap: 1rem; }
-  .wf-column-header {
-    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
-    font-weight: 700; padding: 0.75rem 1rem; text-align: center;
-    border-radius: 10px; margin-bottom: 0.5rem;
-  }
-  .wf-you .wf-column-header { background: rgba(201,149,106,0.1); color: var(--oil); }
-  .wf-ai .wf-column-header { background: rgba(99,102,241,0.1); color: var(--accent); }
-  .wf-bridge {
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-    padding: 0 1rem; gap: 2rem;
-  }
-  .wf-arrow {
-    width: 40px; height: 2px; background: rgba(99,102,241,0.2);
-    position: relative;
-  }
-  .wf-arrow::after {
-    content: ''; position: absolute; right: -1px; top: -4px;
-    border: 5px solid transparent; border-left-color: rgba(99,102,241,0.3);
-  }
-  .wf-item {
+  /* Paired workflow rows */
+  .wf-rows { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+  .wf-row {
+    display: grid; grid-template-columns: 1fr 60px 1fr; gap: 0; align-items: stretch;
     background: var(--surface); border: 1px solid rgba(255,255,255,0.04);
-    border-radius: 12px; padding: 1.25rem; transition: all 0.3s;
+    border-radius: 16px; overflow: hidden; transition: all 0.3s;
   }
-  .wf-item:hover { border-color: rgba(255,255,255,0.1); }
-  .wf-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.3rem; }
-  .wf-item p { font-size: 0.78rem; color: var(--dim); line-height: 1.5; }
-  .wf-item .wf-tag {
-    display: inline-block; font-size: 0.6rem; padding: 0.15rem 0.5rem;
-    border-radius: 4px; margin-top: 0.5rem; font-weight: 600;
+  .wf-row:hover { border-color: rgba(99,102,241,0.15); }
+  .wf-left, .wf-right { padding: 1.5rem 1.75rem; }
+  .wf-left {
+    border-right: 1px solid rgba(255,255,255,0.04);
+    background: rgba(201,149,106,0.02);
   }
-  .wf-you .wf-tag { background: rgba(201,149,106,0.12); color: var(--oil); }
-  .wf-ai .wf-tag { background: rgba(99,102,241,0.12); color: var(--accent); }
+  .wf-right { background: rgba(99,102,241,0.02); }
+  .wf-center {
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.01);
+  }
+  .wf-center svg { width: 24px; height: 24px; }
+  .wf-step-num {
+    font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
+    font-weight: 700; margin-bottom: 0.5rem;
+  }
+  .wf-left .wf-step-num { color: var(--oil); }
+  .wf-right .wf-step-num { color: var(--accent); }
+  .wf-row h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.35rem; }
+  .wf-row p { font-size: 0.82rem; color: var(--dim); line-height: 1.55; }
+  .wf-tag-row { margin-top: 0.6rem; }
+  .wf-tag {
+    display: inline-block; font-size: 0.6rem; padding: 0.2rem 0.6rem;
+    border-radius: 4px; font-weight: 600;
+  }
+  .wf-left .wf-tag { background: rgba(201,149,106,0.12); color: var(--oil); }
+  .wf-right .wf-tag { background: rgba(99,102,241,0.12); color: var(--accent); }
+  .wf-row-header {
+    display: grid; grid-template-columns: 1fr 60px 1fr; gap: 0;
+    margin-bottom: 0.5rem;
+  }
+  .wf-col-label {
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 700; padding: 0.75rem 1.75rem; border-radius: 10px;
+  }
+  .wf-col-label.you { background: rgba(201,149,106,0.08); color: var(--oil); text-align: center; }
+  .wf-col-label.ai { background: rgba(99,102,241,0.08); color: var(--accent); text-align: center; }
 
-  /* --- Concrete Ideas --- */
-  .ideas-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 1.5rem; margin-top: 2.5rem;
-  }
-  .idea-card {
-    background: var(--surface); border: 1px solid rgba(255,255,255,0.04);
-    border-radius: 16px; padding: 2rem; transition: all 0.3s;
-    position: relative;
-  }
-  .idea-card:hover { border-color: rgba(99,102,241,0.2); transform: translateY(-3px); }
-  .idea-card .idea-number {
-    position: absolute; top: 1.5rem; right: 1.5rem;
-    font-size: 2.5rem; font-weight: 900; color: rgba(255,255,255,0.03);
-    font-family: 'Playfair Display', serif;
-  }
-  .idea-card .idea-icon { font-size: 1.5rem; margin-bottom: 1rem; }
-  .idea-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
-  .idea-card .idea-what {
-    font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem;
-  }
-  .idea-card .idea-how {
-    font-size: 0.78rem; color: var(--dim); line-height: 1.5;
-    padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.04);
-  }
-  .idea-card .idea-how strong { color: var(--muted); }
-  .idea-card .effort-bar {
-    margin-top: 0.75rem; display: flex; align-items: center; gap: 0.5rem;
-  }
-  .effort-track {
-    flex: 1; height: 4px; background: rgba(255,255,255,0.04); border-radius: 2px;
-    overflow: hidden;
-  }
-  .effort-fill { height: 100%; border-radius: 2px; }
-  .effort-label { font-size: 0.65rem; color: var(--dim); white-space: nowrap; }
-
-  /* --- Mutual Value --- */
+  /* Value props */
   .value-props {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-    margin-top: 2.5rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem;
   }
   .value-card {
     background: linear-gradient(135deg, var(--surface), var(--surface2));
@@ -375,19 +349,45 @@
   .value-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
   .value-card p { font-size: 0.82rem; color: var(--dim); line-height: 1.5; }
 
-  /* --- CTA --- */
+  /* ===== IDEAS ===== */
+  .ideas-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .idea-card {
+    background: var(--surface); border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 16px; padding: 2rem; transition: all 0.3s; position: relative;
+  }
+  .idea-card:hover { border-color: rgba(99,102,241,0.2); transform: translateY(-3px); }
+  .idea-card .idea-number {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    font-size: 2.5rem; font-weight: 900; color: rgba(255,255,255,0.03);
+    font-family: 'Playfair Display', serif;
+  }
+  .idea-card .idea-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+  .idea-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .idea-card .idea-what { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+  .idea-card .idea-how {
+    font-size: 0.78rem; color: var(--dim); line-height: 1.5;
+    padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  .idea-card .idea-how strong { color: var(--muted); }
+  .idea-card .effort-bar { margin-top: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+  .effort-track {
+    flex: 1; height: 4px; background: rgba(255,255,255,0.04); border-radius: 2px; overflow: hidden;
+  }
+  .effort-fill { height: 100%; border-radius: 2px; }
+  .effort-label { font-size: 0.65rem; color: var(--dim); white-space: nowrap; }
+
+  /* CTA */
   .cta-block {
     background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(201,149,106,0.06));
     border: 1px solid rgba(99,102,241,0.12); border-radius: 20px;
     padding: 3.5rem; text-align: center; margin-top: 4rem;
   }
-  .cta-block h3 {
-    font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem;
-  }
+  .cta-block h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; }
   .cta-block p { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 550px; margin: 0 auto; }
-  .cta-block .cta-sig {
-    margin-top: 2rem; font-size: 0.85rem; color: var(--dim);
-  }
+  .cta-block .cta-sig { margin-top: 2rem; font-size: 0.85rem; color: var(--dim); }
   .cta-block .cta-sig strong { color: var(--muted); }
 
   /* ===== FOOTER ===== */
@@ -405,14 +405,17 @@
     .catalog-grid { grid-template-columns: 1fr 1fr; }
     .style-dna { grid-template-columns: 1fr 1fr; }
     .voice-grid { grid-template-columns: 1fr; }
-    .workflow-map { grid-template-columns: 1fr; }
-    .wf-bridge { flex-direction: row; padding: 1rem 0; }
-    .wf-arrow { width: 2px; height: 30px; }
-    .wf-arrow::after { right: -4px; top: auto; bottom: -1px; border: 5px solid transparent; border-top-color: rgba(99,102,241,0.3); }
+    .wf-row { grid-template-columns: 1fr; }
+    .wf-center { padding: 0.5rem; justify-content: flex-start; }
+    .wf-center svg { transform: rotate(90deg); }
+    .wf-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .wf-row-header { grid-template-columns: 1fr; gap: 0.5rem; }
+    .wf-row-header .wf-center-spacer { display: none; }
     .value-props { grid-template-columns: 1fr; }
     .hero-nav-cards { grid-template-columns: 1fr; }
-    nav { padding: 0 1rem; }
-    .nav-tab { padding: 1rem 0.6rem; font-size: 0.7rem; }
+    nav { padding: 0 0.75rem; }
+    .nav-tab { padding: 1rem 0.5rem; font-size: 0.65rem; }
+    .nav-brand { font-size: 0.9rem; }
   }
 
   /* ===== ANIMATIONS ===== */
@@ -422,12 +425,11 @@
   .d2 { animation-delay: 0.2s; opacity: 0; }
   .d3 { animation-delay: 0.3s; opacity: 0; }
   .d4 { animation-delay: 0.4s; opacity: 0; }
-  .d5 { animation-delay: 0.5s; opacity: 0; }
 </style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
+<!-- NAV -->
 <nav>
   <div class="nav-brand">
     <span class="dk">Dan Katz</span><span class="sep">/</span><span class="ai">Artistic Intelligence</span>
@@ -435,15 +437,16 @@
   <div class="nav-tabs">
     <button class="nav-tab active" data-view="v-home">Home</button>
     <button class="nav-tab" data-view="v-artist">The Artist<span class="part-indicator part-1">I</span></button>
-    <button class="nav-tab" data-view="v-portfolio">Portfolio Map<span class="part-indicator part-1">I</span></button>
+    <button class="nav-tab" data-view="v-portfolio">Portfolio<span class="part-indicator part-1">I</span></button>
     <button class="nav-tab" data-view="v-style">Style DNA<span class="part-indicator part-1">I</span></button>
+    <button class="nav-tab" data-view="v-artgraph">Art Graph<span class="part-indicator part-1">I</span></button>
     <button class="nav-tab" data-view="v-graph">Knowledge Graph<span class="part-indicator part-1">I</span></button>
     <button class="nav-tab" data-view="v-together">Together<span class="part-indicator part-2">II</span></button>
     <button class="nav-tab" data-view="v-ideas">Ideas<span class="part-indicator part-2">II</span></button>
   </div>
 </nav>
 
-<!-- ===== HOME ===== -->
+<!-- HOME -->
 <div id="v-home" class="view active">
   <div class="hero">
     <div class="hero-eyebrow anim">Artistic Intelligence Report</div>
@@ -461,7 +464,7 @@
       <div class="hero-card" onclick="goTo('v-artist')">
         <div class="hc-label">Part I — The Knowledge Base</div>
         <h3>Understanding Dan's Art</h3>
-        <p>Portfolio catalog, style analysis, artistic voice extraction, and a full knowledge graph — all generated from publicly available work.</p>
+        <p>Portfolio catalog, style analysis, art graph, artistic voice extraction, and a full knowledge graph — all generated from publicly available work.</p>
       </div>
       <div class="hero-card" onclick="goTo('v-together')">
         <div class="hc-label">Part II — The Collaboration</div>
@@ -472,16 +475,15 @@
   </div>
 </div>
 
-<!-- ===== PART I: THE ARTIST ===== -->
+<!-- PART I: ARTIST -->
 <div id="v-artist" class="view">
   <div class="container section-pad">
     <div class="sec-label" style="color:var(--oil);">Part I — The Artist</div>
     <div class="sec-title">Dan Katz, Illustrator</div>
-    <div class="sec-desc" style="margin-bottom: 3rem;">
+    <div class="sec-desc" style="margin-bottom:3rem;">
       Everything here was assembled by AI from your public portfolio, Reedsy profile,
       and web presence — to show what's possible when machine intelligence meets artistic depth.
     </div>
-
     <div class="artist-profile">
       <div class="artist-bio">
         <div class="bio-text">
@@ -496,287 +498,194 @@
           His work doesn't look like AI-generated illustration. That's the point. In an era flooding
           with synthetic imagery, Dan's paintings carry the <strong>texture of physical media</strong>,
           the <strong>warmth of impasto brushwork</strong>, and the <strong>intentionality of
-          traditional composition</strong>. Every piece is a decision tree of color, light, and
-          narrative — something algorithms approximate but don't replicate.
+          traditional composition</strong>.
         </div>
         <div class="bio-text">
           Based in Atlanta, freelancing since 2022 after 7+ years as a graphic designer at Kason Industries.
           Currently <strong>open for commissions and contracts</strong> through Reedsy and direct outreach.
         </div>
         <div class="bio-tags">
-          <span class="bio-tag">Oil Painting</span>
-          <span class="bio-tag">Book Illustration</span>
-          <span class="bio-tag">Fantasy</span>
-          <span class="bio-tag">Science Fiction</span>
-          <span class="bio-tag">Literary Fiction</span>
-          <span class="bio-tag">Character Design</span>
-          <span class="bio-tag">Narrative Art</span>
-          <span class="bio-tag">Commissions</span>
+          <span class="bio-tag">Oil Painting</span><span class="bio-tag">Book Illustration</span>
+          <span class="bio-tag">Fantasy</span><span class="bio-tag">Science Fiction</span>
+          <span class="bio-tag">Literary Fiction</span><span class="bio-tag">Character Design</span>
+          <span class="bio-tag">Narrative Art</span><span class="bio-tag">Commissions</span>
         </div>
       </div>
-
       <div class="artist-facts">
         <div class="fact-card">
           <div class="fact-icon" style="background:rgba(201,149,106,0.12);">🎓</div>
-          <div>
-            <h4>Formal Training</h4>
-            <p>B.A. Illustration, Columbus College of Art & Design. Continued education through IMC (2009–2018) studying under industry masters.</p>
-          </div>
+          <div><h4>Formal Training</h4><p>B.A. Illustration, Columbus College of Art & Design. Continued education through IMC (2009–2018) studying under industry masters.</p></div>
         </div>
         <div class="fact-card">
           <div class="fact-icon" style="background:rgba(99,102,241,0.12);">🖌️</div>
-          <div>
-            <h4>Primary Medium</h4>
-            <p>Oil on panel/canvas. Painterly realism with deliberate design — not photorealism, not loose impressionism. A controlled warmth.</p>
-          </div>
+          <div><h4>Primary Medium</h4><p>Oil on panel/canvas. Painterly realism with deliberate design — not photorealism, not loose impressionism. A controlled warmth.</p></div>
         </div>
         <div class="fact-card">
           <div class="fact-icon" style="background:rgba(236,72,153,0.12);">📚</div>
-          <div>
-            <h4>Market Position</h4>
-            <p>Book covers & interiors across fantasy, sci-fi, literary fiction, YA, action/adventure, thriller. Available on Reedsy for publishing projects.</p>
-          </div>
+          <div><h4>Market Position</h4><p>Book covers & interiors across fantasy, sci-fi, literary fiction, YA, action/adventure, thriller. Available on Reedsy.</p></div>
         </div>
         <div class="fact-card">
           <div class="fact-icon" style="background:rgba(16,185,129,0.12);">🌐</div>
-          <div>
-            <h4>Current Channels</h4>
-            <p>Portfolio site (dankatzillustration.com), Instagram (@artsmandan), Reedsy marketplace, Saatchi Art. 935+ works shared across platforms.</p>
-          </div>
+          <div><h4>Current Channels</h4><p>Portfolio site (dankatzillustration.com), Instagram (@artsmandan), Reedsy, Saatchi Art. 935+ works shared.</p></div>
         </div>
         <div class="fact-card">
           <div class="fact-icon" style="background:rgba(245,158,11,0.12);">⚡</div>
-          <div>
-            <h4>Differentiator</h4>
-            <p>In a market saturated with digital and AI art, Dan's oil paintings carry physical texture and human intentionality that collectors and art directors can feel.</p>
-          </div>
+          <div><h4>Differentiator</h4><p>In a market saturated with digital and AI art, Dan's oil paintings carry physical texture and human intentionality that collectors feel.</p></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== PORTFOLIO MAP ===== -->
+<!-- PORTFOLIO -->
 <div id="v-portfolio" class="view">
   <div class="container section-pad">
     <div class="sec-label" style="color:var(--oil);">Part I — Portfolio Intelligence</div>
     <div class="sec-title">The Work, Categorized</div>
     <div class="sec-desc">
       AI-cataloged from Dan's portfolio — each piece mapped by genre, mood, palette, and narrative function.
-      This is the kind of intelligent cataloging that turns a portfolio into a searchable, analyzable asset.
     </div>
-
     <div class="catalog-grid">
       <div class="catalog-item">
         <div class="cat-genre" style="color:var(--accent3);">Literary Adaptation</div>
         <h4>The Little Mermaid</h4>
-        <div class="cat-desc">Reimagined fairy tale. Aquatic dreamscape with soft, diffused lighting. Romantic melancholy — the tragedy of transformation made visible in paint.</div>
-        <div class="cat-swatch">
-          <div class="swatch" style="background:#2d5a7b;"></div>
-          <div class="swatch" style="background:#6ba8c4;"></div>
-          <div class="swatch" style="background:#c9a86c;"></div>
-          <div class="swatch" style="background:#f0e6d3;"></div>
-        </div>
+        <div class="cat-desc">Reimagined fairy tale. Aquatic dreamscape with soft, diffused lighting. Romantic melancholy — the tragedy of transformation.</div>
+        <div class="cat-swatch"><div class="swatch" style="background:#2d5a7b;"></div><div class="swatch" style="background:#6ba8c4;"></div><div class="swatch" style="background:#c9a86c;"></div><div class="swatch" style="background:#f0e6d3;"></div></div>
         <div class="cat-meta"><span>Mood: Ethereal</span><span>Palette: Cool Aquatic</span></div>
       </div>
-
       <div class="catalog-item">
         <div class="cat-genre" style="color:var(--accent3);">Literary Adaptation</div>
         <h4>The Count of Monte Cristo</h4>
-        <div class="cat-desc">Character study in classical drama. Dark, rich tones with strategic highlights. The weight of betrayal and revenge in a single composition.</div>
-        <div class="cat-swatch">
-          <div class="swatch" style="background:#2a1f14;"></div>
-          <div class="swatch" style="background:#8b6914;"></div>
-          <div class="swatch" style="background:#c4a35a;"></div>
-          <div class="swatch" style="background:#e8d9b0;"></div>
-        </div>
+        <div class="cat-desc">Character study in classical drama. Dark, rich tones with strategic highlights. The weight of betrayal and revenge.</div>
+        <div class="cat-swatch"><div class="swatch" style="background:#2a1f14;"></div><div class="swatch" style="background:#8b6914;"></div><div class="swatch" style="background:#c4a35a;"></div><div class="swatch" style="background:#e8d9b0;"></div></div>
         <div class="cat-meta"><span>Mood: Dramatic</span><span>Palette: Old Master</span></div>
       </div>
-
       <div class="catalog-item">
         <div class="cat-genre" style="color:var(--warm);">Character Study</div>
         <h4>The Lovebirds</h4>
-        <div class="cat-desc">Intimate dual portrait. Warm skin tones, close framing, tender emotional register. Dan's ability to paint feeling, not just form.</div>
-        <div class="cat-swatch">
-          <div class="swatch" style="background:#d4956a;"></div>
-          <div class="swatch" style="background:#e8c49a;"></div>
-          <div class="swatch" style="background:#7a4830;"></div>
-          <div class="swatch" style="background:#f5e6d0;"></div>
-        </div>
+        <div class="cat-desc">Intimate dual portrait. Warm skin tones, close framing. Dan's ability to paint feeling, not just form.</div>
+        <div class="cat-swatch"><div class="swatch" style="background:#d4956a;"></div><div class="swatch" style="background:#e8c49a;"></div><div class="swatch" style="background:#7a4830;"></div><div class="swatch" style="background:#f5e6d0;"></div></div>
         <div class="cat-meta"><span>Mood: Tender</span><span>Palette: Warm Naturals</span></div>
       </div>
-
       <div class="catalog-item">
         <div class="cat-genre" style="color:var(--accent);">Game Art / Dark Fantasy</div>
         <h4>Crush of Wurms</h4>
-        <div class="cat-desc">MTG-style creature piece. Writhing organic forms, dynamic diagonals, dark fantasy palette. Power and chaos in controlled composition.</div>
-        <div class="cat-swatch">
-          <div class="swatch" style="background:#1a2a1a;"></div>
-          <div class="swatch" style="background:#4a6b3a;"></div>
-          <div class="swatch" style="background:#8b7355;"></div>
-          <div class="swatch" style="background:#c4b896;"></div>
-        </div>
+        <div class="cat-desc">MTG-style creature piece. Writhing organic forms, dynamic diagonals. Power and chaos in controlled composition.</div>
+        <div class="cat-swatch"><div class="swatch" style="background:#1a2a1a;"></div><div class="swatch" style="background:#4a6b3a;"></div><div class="swatch" style="background:#8b7355;"></div><div class="swatch" style="background:#c4b896;"></div></div>
         <div class="cat-meta"><span>Mood: Menacing</span><span>Palette: Swamp Dark</span></div>
       </div>
-
       <div class="catalog-item">
         <div class="cat-genre" style="color:var(--accent);">Game Art / Action</div>
         <h4>Banefire</h4>
-        <div class="cat-desc">Magical combat. Intense warm-to-hot color ramp with fire as narrative center. Action-oriented with cinematic framing.</div>
-        <div class="cat-swatch">
-          <div class="swatch" style="background:#8b1a1a;"></div>
-          <div class="swatch" style="background:#d44a00;"></div>
-          <div class="swatch" style="background:#f5a623;"></div>
-          <div class="swatch" style="background:#ffe0a0;"></div>
-        </div>
+        <div class="cat-desc">Magical combat. Intense warm-to-hot color ramp with fire as narrative center. Cinematic framing.</div>
+        <div class="cat-swatch"><div class="swatch" style="background:#8b1a1a;"></div><div class="swatch" style="background:#d44a00;"></div><div class="swatch" style="background:#f5a623;"></div><div class="swatch" style="background:#ffe0a0;"></div></div>
         <div class="cat-meta"><span>Mood: Explosive</span><span>Palette: Fire Spectrum</span></div>
       </div>
-
       <div class="catalog-item">
         <div class="cat-genre" style="color:var(--cyan);">Steampunk / Adventure</div>
         <h4>Airship Series</h4>
-        <div class="cat-desc">Three-piece series: "Walk the Plank," "Sailing," "Towing the Ship." Cohesive retro-futurist world. Sepia-muted palette with atmospheric perspective.</div>
-        <div class="cat-swatch">
-          <div class="swatch" style="background:#5a4a3a;"></div>
-          <div class="swatch" style="background:#8b7d6b;"></div>
-          <div class="swatch" style="background:#c4b89a;"></div>
-          <div class="swatch" style="background:#e0d8c8;"></div>
-        </div>
+        <div class="cat-desc">"Walk the Plank," "Sailing," "Towing the Ship." Cohesive retro-futurist world. Atmospheric perspective.</div>
+        <div class="cat-swatch"><div class="swatch" style="background:#5a4a3a;"></div><div class="swatch" style="background:#8b7d6b;"></div><div class="swatch" style="background:#c4b89a;"></div><div class="swatch" style="background:#e0d8c8;"></div></div>
         <div class="cat-meta"><span>Mood: Adventurous</span><span>Palette: Antique Sepia</span></div>
       </div>
-
       <div class="catalog-item">
         <div class="cat-genre" style="color:var(--success);">Whimsical / Contemporary</div>
         <h4>Contemporary Dragon Series</h4>
-        <div class="cat-desc">"Dragon Commute" + "Dragon Hot Ride." Mythological creatures in mundane settings. Dan's humor — high technique applied to absurd premises.</div>
-        <div class="cat-swatch">
-          <div class="swatch" style="background:#4a7a4a;"></div>
-          <div class="swatch" style="background:#7ab87a;"></div>
-          <div class="swatch" style="background:#d4a574;"></div>
-          <div class="swatch" style="background:#f0e0c0;"></div>
-        </div>
+        <div class="cat-desc">Mythological creatures in mundane settings. Dan's humor — high technique applied to absurd premises.</div>
+        <div class="cat-swatch"><div class="swatch" style="background:#4a7a4a;"></div><div class="swatch" style="background:#7ab87a;"></div><div class="swatch" style="background:#d4a574;"></div><div class="swatch" style="background:#f0e0c0;"></div></div>
         <div class="cat-meta"><span>Mood: Playful</span><span>Palette: Natural + Pop</span></div>
       </div>
-
       <div class="catalog-item">
         <div class="cat-genre" style="color:var(--accent2);">Sci-Fi / Solitary</div>
         <h4>Astronaut</h4>
-        <div class="cat-desc">Single figure in vast space. Technical rendering meets existential quiet. The loneliness of exploration, painted with precision.</div>
-        <div class="cat-swatch">
-          <div class="swatch" style="background:#0a1628;"></div>
-          <div class="swatch" style="background:#1e3a5f;"></div>
-          <div class="swatch" style="background:#e0e0e0;"></div>
-          <div class="swatch" style="background:#f5a623;"></div>
-        </div>
+        <div class="cat-desc">Single figure in vast space. Technical rendering meets existential quiet. Painted with precision.</div>
+        <div class="cat-swatch"><div class="swatch" style="background:#0a1628;"></div><div class="swatch" style="background:#1e3a5f;"></div><div class="swatch" style="background:#e0e0e0;"></div><div class="swatch" style="background:#f5a623;"></div></div>
         <div class="cat-meta"><span>Mood: Contemplative</span><span>Palette: Deep Space</span></div>
       </div>
-
       <div class="catalog-item">
         <div class="cat-genre" style="color:var(--warm);">Fantastical Realism</div>
         <h4>Language of Love / Along the River</h4>
-        <div class="cat-desc">Character-driven narrative pieces. Quirky subjects rendered with dead-serious technique. The gap between form and content creates charm.</div>
-        <div class="cat-swatch">
-          <div class="swatch" style="background:#6b8e6b;"></div>
-          <div class="swatch" style="background:#a0b890;"></div>
-          <div class="swatch" style="background:#c9956a;"></div>
-          <div class="swatch" style="background:#e8dcc8;"></div>
-        </div>
+        <div class="cat-desc">Character-driven narrative. Quirky subjects with dead-serious technique. The gap creates charm.</div>
+        <div class="cat-swatch"><div class="swatch" style="background:#6b8e6b;"></div><div class="swatch" style="background:#a0b890;"></div><div class="swatch" style="background:#c9956a;"></div><div class="swatch" style="background:#e8dcc8;"></div></div>
         <div class="cat-meta"><span>Mood: Whimsical-Earnest</span><span>Palette: Natural Earth</span></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== STYLE DNA ===== -->
+<!-- STYLE DNA -->
 <div id="v-style" class="view">
   <div class="container section-pad">
     <div class="sec-label" style="color:var(--oil);">Part I — Style Analysis</div>
     <div class="sec-title">Extracting the DNA</div>
-    <div class="sec-desc">
-      AI-derived visual fingerprint. These aren't opinions — they're patterns detected across Dan's
-      body of work. The kind of analysis that takes a human curator months, done in minutes.
-    </div>
-
+    <div class="sec-desc">AI-derived visual fingerprint across Dan's body of work.</div>
     <div class="style-dna" id="style-dna-grid">
-      <div class="dna-card">
-        <div class="dna-viz" id="dna-palette"></div>
-        <h4>Color Architecture</h4>
-        <p>Earth-dominant palette with strategic saturated accents. Warm underlayer philosophy — even cold scenes have warm shadows.</p>
-      </div>
-      <div class="dna-card">
-        <div class="dna-viz" id="dna-comp"></div>
-        <h4>Composition Logic</h4>
-        <p>Classical staging with asymmetric focal points. Uses depth-of-field effects unusual in oil painting — a cinematic eye.</p>
-      </div>
-      <div class="dna-card">
-        <div class="dna-viz" id="dna-mood"></div>
-        <h4>Emotional Range</h4>
-        <p>Spans from menacing (Wurms) to tender (Lovebirds) to absurd (Dragon Commute). Versatility without style fragmentation.</p>
-      </div>
-      <div class="dna-card">
-        <div class="dna-viz" id="dna-genre"></div>
-        <h4>Genre Distribution</h4>
-        <p>Fantasy-heavy but not fantasy-only. Literary adaptations and character studies show range beyond genre illustration.</p>
-      </div>
+      <div class="dna-card"><div class="dna-viz" id="dna-palette"></div><h4>Color Architecture</h4><p>Earth-dominant with strategic saturated accents. Warm underlayer philosophy.</p></div>
+      <div class="dna-card"><div class="dna-viz" id="dna-comp"></div><h4>Composition Logic</h4><p>Classical staging, asymmetric focal points. Cinematic depth-of-field.</p></div>
+      <div class="dna-card"><div class="dna-viz" id="dna-mood"></div><h4>Emotional Range</h4><p>Menacing to tender to absurd. Versatility without fragmentation.</p></div>
+      <div class="dna-card"><div class="dna-viz" id="dna-genre"></div><h4>Genre Distribution</h4><p>Fantasy-heavy but not fantasy-only. Literary range beyond genre illustration.</p></div>
     </div>
-
-    <div class="divider" style="margin: 4rem 0;"></div>
-
+    <div class="divider" style="margin:4rem 0;"></div>
     <div class="sec-label" style="color:var(--oil);">Artistic Voice</div>
-    <div class="sec-title" style="font-size: 2rem;">What Makes Dan's Work <em>Dan's</em></div>
-
+    <div class="sec-title" style="font-size:2rem;">What Makes Dan's Work <em>Dan's</em></div>
     <div class="voice-grid">
       <div class="voice-card">
         <blockquote>"Painterly realism and thoughtful design that blends into intriguing and emotional works"</blockquote>
-        <div class="analysis">
-          <strong>Translation:</strong> Dan doesn't chase photorealism. He leaves the brush visible.
-          Every stroke is a conscious decision — not rendered, <em>authored</em>. The "thoughtful design"
-          means compositions are structured with graphic intent, not just observed. This is illustration
-          in the truest sense: images that communicate, not just depict.
-        </div>
+        <div class="analysis"><strong>Translation:</strong> Dan doesn't chase photorealism. He leaves the brush visible. Every stroke is a conscious decision — not rendered, <em>authored</em>. Compositions are structured with graphic intent. This is illustration in the truest sense.</div>
       </div>
       <div class="voice-card">
-        <blockquote>"He has always appreciated both the serious and the fun, and looks to balance the thought-provoking and the entertaining"</blockquote>
-        <div class="analysis">
-          <strong>Translation:</strong> The dragon-commuting-to-work piece exists in the same portfolio as
-          Monte Cristo. This is rare. Most illustrators pick a lane. Dan's range means he can match
-          any author's tone — from grimdark to whimsical — without forcing the work. That's a
-          <strong>commercial superpower</strong> for book illustration.
-        </div>
+        <blockquote>"He has always appreciated both the serious and the fun"</blockquote>
+        <div class="analysis"><strong>Translation:</strong> The dragon-commuting-to-work piece exists in the same portfolio as Monte Cristo. Most illustrators pick a lane. Dan's range means he can match any author's tone. That's a <strong>commercial superpower</strong> for book illustration.</div>
       </div>
       <div class="voice-card">
         <blockquote>"Oil paintings celebrated for their richness, conveying subtle emotions with a watercolor-like softness"</blockquote>
-        <div class="analysis">
-          <strong>Translation:</strong> Dan's oil handling is unusual — thin in places, creating translucency
-          typically associated with watercolor. This creates atmospheric depth that digital painting
-          struggles to match. It's a <strong>technical signature</strong> — his paintings breathe in a way
-          that AI-generated imagery fundamentally cannot.
-        </div>
+        <div class="analysis"><strong>Translation:</strong> Dan's oil handling is unusual — thin in places, creating translucency typically associated with watercolor. This creates atmospheric depth that digital painting struggles to match. A <strong>technical signature</strong>.</div>
       </div>
       <div class="voice-card">
         <blockquote>"Experienced in developing book-based illustrations and can communicate and work with clients"</blockquote>
-        <div class="analysis">
-          <strong>Translation:</strong> Not just a painter — a <strong>collaborator</strong>. Dan understands
-          that book illustration is interpretive work. He reads the manuscript, talks to the author,
-          and makes visual decisions that serve the story. This client-facing skill is where AI
-          struggles most — the nuanced conversation between artist and author about what a scene means.
-        </div>
+        <div class="analysis"><strong>Translation:</strong> Not just a painter — a <strong>collaborator</strong>. Dan reads the manuscript, talks to the author, and makes visual decisions that serve the story. This is where AI struggles most.</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== KNOWLEDGE GRAPH ===== -->
+<!-- ART GRAPH (NEW) -->
+<div id="v-artgraph" class="view">
+  <div class="container section-pad">
+    <div class="sec-label" style="color:var(--oil);">Part I — Art Constellation</div>
+    <div class="sec-title">Dan's Paintings, Connected</div>
+    <div class="sec-desc">
+      Each painting rendered as its own color signature. Lines connect works that share
+      genre, mood, technique, or palette DNA. Click any work to see its palette and relationships.
+    </div>
+    <div id="ag-container">
+      <canvas id="ag-canvas"></canvas>
+      <div class="ag-overlay ag-legend">
+        <div class="lg-item"><div class="lg-dot" style="background:var(--accent3);"></div> Literary Adaptation</div>
+        <div class="lg-item"><div class="lg-dot" style="background:var(--accent);"></div> Game Art / Action</div>
+        <div class="lg-item"><div class="lg-dot" style="background:var(--cyan);"></div> Steampunk</div>
+        <div class="lg-item"><div class="lg-dot" style="background:var(--success);"></div> Whimsical</div>
+        <div class="lg-item"><div class="lg-dot" style="background:var(--accent2);"></div> Sci-Fi</div>
+        <div class="lg-item"><div class="lg-dot" style="background:var(--warm);"></div> Character / Realism</div>
+        <div style="margin-top:0.5rem;font-size:0.7rem;color:var(--dim);">Ring = palette colors<br>Line thickness = similarity</div>
+      </div>
+      <div class="ag-overlay ag-detail" id="ag-detail">
+        <h4>Art Constellation</h4>
+        <p style="color:var(--dim);">Dan's paintings visualized as a connected constellation. Each node shows the work's color palette as a ring. Click to explore.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- KNOWLEDGE GRAPH -->
 <div id="v-graph" class="view">
   <div class="container section-pad">
     <div class="sec-label" style="color:var(--oil);">Part I — Knowledge Graph</div>
     <div class="sec-title">Dan's Creative Universe</div>
     <div class="sec-desc">
       Every node is a real element of Dan's artistic practice. Click to explore.
-      Drag to navigate. This graph <em>is</em> the knowledge base — relationships between
-      skills, genres, works, influences, and opportunities, all connected.
+      Drag to navigate. 45 nodes, 60+ relationships.
     </div>
-
     <div id="kg-container">
       <canvas id="kg-canvas"></canvas>
       <div class="kg-overlay kg-legend">
@@ -789,280 +698,170 @@
       </div>
       <div class="kg-overlay kg-detail" id="kg-detail">
         <h4>Dan Katz Knowledge Graph</h4>
-        <p style="color:var(--dim);">45 nodes. 60+ relationships. Built from public data by AI. Click any node to see its connections and meaning.</p>
+        <p style="color:var(--dim);">45 nodes. 60+ relationships. Built from public data by AI. Click any node.</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== PART II: TOGETHER ===== -->
+<!-- PART II: TOGETHER (FIXED) -->
 <div id="v-together" class="view">
   <div class="container section-pad">
     <div class="sec-label" style="color:var(--accent);">Part II — Working Together</div>
     <div class="sec-title">Where AI Fits Your Workflow</div>
-    <div class="sec-desc" style="margin-bottom: 3rem;">
-      Not selling you AI. Showing you where it removes friction from work you're already doing —
-      so more of your hours go to the canvas.
+    <div class="sec-desc" style="margin-bottom:3rem;">
+      Not selling you AI. Showing you where it removes friction from work you're already doing.
     </div>
 
     <div class="philosophy">
       <h3>The honest premise</h3>
-      <p>
-        AI can generate images. You know this. You've probably seen it flood your market with
-        mediocre fantasy art. Here's what AI <span class="highlight">cannot</span> do:
-      </p>
-      <p>
-        It can't load a brush with cadmium yellow and drag it through titanium white with the
-        pressure that comes from painting the same stroke ten thousand times. It can't read
-        a manuscript and feel which moment is the cover. It can't sit with a client and hear
-        the difference between what they say they want and what they actually need.
-      </p>
-      <p>
-        <span class="highlight">Your hands, your eye, your judgment — those are the product.</span>
-        AI is useful for everything <em>around</em> that: finding clients, managing content,
-        analyzing markets, handling the business of being an artist so you can focus on the art of being an artist.
-      </p>
+      <p>AI can generate images. You know this. You've probably seen it flood your market with mediocre fantasy art. Here's what AI <span class="highlight">cannot</span> do:</p>
+      <p>It can't load a brush with cadmium yellow and drag it through titanium white with the pressure that comes from painting the same stroke ten thousand times. It can't read a manuscript and feel which moment is the cover. It can't sit with a client and hear the difference between what they say they want and what they actually need.</p>
+      <p><span class="highlight">Your hands, your eye, your judgment — those are the product.</span> AI is useful for everything <em>around</em> that: finding clients, managing content, analyzing markets, handling the business of being an artist so you can focus on the art of being an artist.</p>
     </div>
 
     <div class="sec-label" style="color:var(--accent);">Your Workflow → AI Assist</div>
-    <div class="sec-title" style="font-size: 1.8rem;">Side by Side</div>
+    <div class="sec-title" style="font-size:1.8rem;">Side by Side</div>
 
-    <div class="workflow-map">
-      <div class="wf-column wf-you">
-        <div class="wf-column-header">What Dan Does (Unchanged)</div>
-        <div class="wf-item">
+    <div class="wf-row-header">
+      <div class="wf-col-label you">What Dan Does (Unchanged)</div>
+      <div class="wf-center-spacer"></div>
+      <div class="wf-col-label ai">What AI Handles (New)</div>
+    </div>
+
+    <div class="wf-rows">
+      <div class="wf-row">
+        <div class="wf-left">
+          <div class="wf-step-num">Step 1 — Dan</div>
           <h4>Read the manuscript</h4>
           <p>Feel the story. Identify the pivotal visual moment. That editorial instinct is irreplaceable.</p>
-          <div class="wf-tag">Creative Judgment</div>
+          <div class="wf-tag-row"><span class="wf-tag">Creative Judgment</span></div>
         </div>
-        <div class="wf-item">
-          <h4>Thumbnail compositions</h4>
-          <p>Rough out 3–5 options in pencil. Your design brain works spatially — keep it analog.</p>
-          <div class="wf-tag">Design Skill</div>
+        <div class="wf-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(99,102,241,0.5)" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </div>
-        <div class="wf-item">
-          <h4>Paint</h4>
-          <p>Oil on panel. The part that takes hours, that builds texture, that creates value. This is the work.</p>
-          <div class="wf-tag">Core Craft</div>
-        </div>
-        <div class="wf-item">
-          <h4>Client dialogue</h4>
-          <p>Present options, receive feedback, navigate revisions. Human relationship, human nuance.</p>
-          <div class="wf-tag">Relationship</div>
-        </div>
-        <div class="wf-item">
-          <h4>Refine & deliver</h4>
-          <p>Final painting, high-res scan, color-corrected files. Your quality standard, your name on it.</p>
-          <div class="wf-tag">Quality Control</div>
-        </div>
-      </div>
-
-      <div class="wf-bridge">
-        <div class="wf-arrow"></div>
-        <div class="wf-arrow"></div>
-        <div class="wf-arrow"></div>
-        <div class="wf-arrow"></div>
-        <div class="wf-arrow"></div>
-      </div>
-
-      <div class="wf-column wf-ai">
-        <div class="wf-column-header">What AI Handles (New)</div>
-        <div class="wf-item">
+        <div class="wf-right">
+          <div class="wf-step-num">Step 1 — AI</div>
           <h4>Surface the right projects</h4>
           <p>Monitor Reedsy, publisher RFPs, game studio postings. Match briefs to your style. Warm leads, not cold emails.</p>
-          <div class="wf-tag">Lead Generation</div>
+          <div class="wf-tag-row"><span class="wf-tag">Lead Generation</span></div>
         </div>
-        <div class="wf-item">
+      </div>
+
+      <div class="wf-row">
+        <div class="wf-left">
+          <div class="wf-step-num">Step 2 — Dan</div>
+          <h4>Thumbnail compositions</h4>
+          <p>Rough out 3–5 options in pencil. Your design brain works spatially — keep it analog.</p>
+          <div class="wf-tag-row"><span class="wf-tag">Design Skill</span></div>
+        </div>
+        <div class="wf-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(99,102,241,0.5)" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <div class="wf-right">
+          <div class="wf-step-num">Step 2 — AI</div>
           <h4>Reference gathering</h4>
           <p>Need 50 airship references? Specific lighting setups? Period-accurate armor? AI curates in seconds, not hours.</p>
-          <div class="wf-tag">Research Assistant</div>
+          <div class="wf-tag-row"><span class="wf-tag">Research Assistant</span></div>
         </div>
-        <div class="wf-item">
+      </div>
+
+      <div class="wf-row">
+        <div class="wf-left">
+          <div class="wf-step-num">Step 3 — Dan</div>
+          <h4>Paint</h4>
+          <p>Oil on panel. The part that takes hours, builds texture, creates value. This is the work.</p>
+          <div class="wf-tag-row"><span class="wf-tag">Core Craft</span></div>
+        </div>
+        <div class="wf-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(99,102,241,0.5)" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <div class="wf-right">
+          <div class="wf-step-num">Step 3 — AI</div>
           <h4>Turn one painting into 30 days of content</h4>
-          <p>Detail crops, palette breakdowns, process stories, composition analysis posts — all from one finished piece.</p>
-          <div class="wf-tag">Content Engine</div>
+          <p>Detail crops, palette breakdowns, process stories, composition analysis — all from one finished piece.</p>
+          <div class="wf-tag-row"><span class="wf-tag">Content Engine</span></div>
         </div>
-        <div class="wf-item">
+      </div>
+
+      <div class="wf-row">
+        <div class="wf-left">
+          <div class="wf-step-num">Step 4 — Dan</div>
+          <h4>Client dialogue</h4>
+          <p>Present options, receive feedback, navigate revisions. Human relationship, human nuance.</p>
+          <div class="wf-tag-row"><span class="wf-tag">Relationship</span></div>
+        </div>
+        <div class="wf-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(99,102,241,0.5)" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <div class="wf-right">
+          <div class="wf-step-num">Step 4 — AI</div>
           <h4>Draft proposals & invoices</h4>
-          <p>Scope documents, usage rights language, pricing benchmarks for your genre. Professional docs without the friction.</p>
-          <div class="wf-tag">Business Operations</div>
+          <p>Scope documents, usage rights language, pricing benchmarks for your genre. Professional docs without friction.</p>
+          <div class="wf-tag-row"><span class="wf-tag">Business Operations</span></div>
         </div>
-        <div class="wf-item">
+      </div>
+
+      <div class="wf-row">
+        <div class="wf-left">
+          <div class="wf-step-num">Step 5 — Dan</div>
+          <h4>Refine & deliver</h4>
+          <p>Final painting, high-res scan, color-corrected files. Your quality standard, your name on it.</p>
+          <div class="wf-tag-row"><span class="wf-tag">Quality Control</span></div>
+        </div>
+        <div class="wf-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(99,102,241,0.5)" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <div class="wf-right">
+          <div class="wf-step-num">Step 5 — AI</div>
           <h4>Portfolio SEO & discovery</h4>
-          <p>Optimize your site for "fantasy book cover illustrator," "oil painting commissions," — the searches that lead to work.</p>
-          <div class="wf-tag">Discoverability</div>
+          <p>Optimize your site for "fantasy book cover illustrator," "oil painting commissions" — searches that lead to work.</p>
+          <div class="wf-tag-row"><span class="wf-tag">Discoverability</span></div>
         </div>
       </div>
     </div>
 
-    <div class="divider" style="margin: 4rem 0;"></div>
+    <div class="divider" style="margin:4rem 0;"></div>
 
     <div class="value-props">
       <div class="value-card">
         <div class="value-icon">🎯</div>
         <h4>For Dan</h4>
-        <p>More painting hours, fewer admin hours. Better clients found faster. Your portfolio working for you 24/7 instead of sitting static.</p>
+        <p>More painting hours, fewer admin hours. Better clients found faster. Portfolio working 24/7.</p>
       </div>
       <div class="value-card">
         <div class="value-icon">🤝</div>
         <h4>For Us</h4>
-        <p>A showcase of AI applied to a real creative practice — not theoretical, not corporate. Proof that the technology serves artists, not just replaces them.</p>
+        <p>A showcase of AI applied to a real creative practice — proof the technology serves artists.</p>
       </div>
       <div class="value-card">
         <div class="value-icon">✨</div>
         <h4>For the Work</h4>
-        <p>Art that reaches the right audience. Stories that find the right illustrator. Fewer talented painters lost to the business side of freelancing.</p>
+        <p>Art that reaches the right audience. Stories that find the right illustrator.</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== IDEAS ===== -->
+<!-- IDEAS -->
 <div id="v-ideas" class="view">
   <div class="container section-pad">
     <div class="sec-label" style="color:var(--accent);">Part II — Concrete Ideas</div>
     <div class="sec-title">Six Things We Could Build</div>
-    <div class="sec-desc" style="margin-bottom: 2rem;">
-      Not hypothetical. Each of these is buildable with tools that exist today.
-      Ordered by impact and effort — the first two could be running this week.
-    </div>
-
+    <div class="sec-desc" style="margin-bottom:2rem;">Not hypothetical. Each buildable today. Ordered by impact — the first two could run this week.</div>
     <div class="ideas-grid">
-      <div class="idea-card">
-        <div class="idea-number">01</div>
-        <div class="idea-icon">📸</div>
-        <h3>One Painting, Thirty Posts</h3>
-        <div class="idea-what">
-          You finish a piece. AI generates a full month of social content: detail crops with
-          commentary, palette analysis graphics, composition overlay posts, "how I built this"
-          narrative threads, before/after studies. Captioned. Hashtagged. Scheduled.
-        </div>
-        <div class="idea-how">
-          <strong>Your input:</strong> One high-res scan + 2 sentences about the piece.<br>
-          <strong>AI output:</strong> 30 formatted posts across Instagram, LinkedIn, Pinterest.
-        </div>
-        <div class="effort-bar">
-          <div class="effort-track"><div class="effort-fill" style="width:20%;background:var(--success);"></div></div>
-          <div class="effort-label">Low effort / High impact</div>
-        </div>
-      </div>
-
-      <div class="idea-card">
-        <div class="idea-number">02</div>
-        <div class="idea-icon">🔍</div>
-        <h3>Opportunity Radar</h3>
-        <div class="idea-what">
-          AI continuously monitors Reedsy marketplace, publisher job boards, game studio
-          art calls, and agency briefs. Filters for your genres (fantasy, sci-fi, literary).
-          Delivers a weekly digest of matching opportunities with estimated fit scores.
-        </div>
-        <div class="idea-how">
-          <strong>Your input:</strong> Approve your style profile once.<br>
-          <strong>AI output:</strong> Weekly email with 5–10 qualified leads.
-        </div>
-        <div class="effort-bar">
-          <div class="effort-track"><div class="effort-fill" style="width:25%;background:var(--success);"></div></div>
-          <div class="effort-label">Low effort / High impact</div>
-        </div>
-      </div>
-
-      <div class="idea-card">
-        <div class="idea-number">03</div>
-        <div class="idea-icon">🌐</div>
-        <h3>Living Portfolio Site</h3>
-        <div class="idea-what">
-          Your current Squarespace site is a static gallery. Upgrade it to a searchable,
-          filterable, story-driven experience. Each piece has its own page with process notes,
-          related works, genre tags, and availability status. SEO-optimized for art directors
-          searching for illustrators.
-        </div>
-        <div class="idea-how">
-          <strong>Your input:</strong> Your existing portfolio images.<br>
-          <strong>AI output:</strong> Complete site with copy, SEO, filtering, and analytics.
-        </div>
-        <div class="effort-bar">
-          <div class="effort-track"><div class="effort-fill" style="width:45%;background:var(--gold);"></div></div>
-          <div class="effort-label">Medium effort / High impact</div>
-        </div>
-      </div>
-
-      <div class="idea-card">
-        <div class="idea-number">04</div>
-        <div class="idea-icon">🎬</div>
-        <h3>Paintings That Move</h3>
-        <div class="idea-what">
-          Take finished oil paintings and create subtle animation: flickering torchlight
-          in the Monte Cristo piece, drifting clouds behind airships, breathing characters.
-          10-second loops that stop the scroll on Instagram and TikTok.
-        </div>
-        <div class="idea-how">
-          <strong>Your input:</strong> High-res scans with layer notes.<br>
-          <strong>AI output:</strong> Animated loops + social-ready video cuts.
-        </div>
-        <div class="effort-bar">
-          <div class="effort-track"><div class="effort-fill" style="width:40%;background:var(--gold);"></div></div>
-          <div class="effort-label">Medium effort / High engagement</div>
-        </div>
-      </div>
-
-      <div class="idea-card">
-        <div class="idea-number">05</div>
-        <div class="idea-icon">📖</div>
-        <h3>Narrative Prompt Engine</h3>
-        <div class="idea-what">
-          AI generates rich scene descriptions tailored to your strengths: "A scholar
-          descends a spiral staircase carved from living wood, candlelight catching
-          the spines of a thousand books" — prompts calibrated to your palette, your
-          composition style, your genre sweet spots. Fuel for personal work.
-        </div>
-        <div class="idea-how">
-          <strong>Your input:</strong> Select mood/genre/complexity from a menu.<br>
-          <strong>AI output:</strong> 5 detailed scene prompts with visual reference boards.
-        </div>
-        <div class="effort-bar">
-          <div class="effort-track"><div class="effort-fill" style="width:30%;background:var(--success);"></div></div>
-          <div class="effort-label">Low effort / Creative fuel</div>
-        </div>
-      </div>
-
-      <div class="idea-card">
-        <div class="idea-number">06</div>
-        <div class="idea-icon">🏛️</div>
-        <h3>Immersive Gallery Experience</h3>
-        <div class="idea-what">
-          A 3D web gallery where visitors explore your paintings in a curated
-          virtual space. Not a flat grid — a designed environment with lighting,
-          ambient sound, and guided tours by theme. Your own exhibition, open 24/7,
-          shareable by link.
-        </div>
-        <div class="idea-how">
-          <strong>Your input:</strong> Curated selection of 15–20 pieces.<br>
-          <strong>AI output:</strong> Complete 3D gallery with narrated tour.
-        </div>
-        <div class="effort-bar">
-          <div class="effort-track"><div class="effort-fill" style="width:70%;background:var(--accent3);"></div></div>
-          <div class="effort-label">Higher effort / Showcase piece</div>
-        </div>
-      </div>
+      <div class="idea-card"><div class="idea-number">01</div><div class="idea-icon">📸</div><h3>One Painting, Thirty Posts</h3><div class="idea-what">You finish a piece. AI generates a full month of social content: detail crops, palette analysis graphics, composition overlays, "how I built this" narrative threads. Captioned. Hashtagged. Scheduled.</div><div class="idea-how"><strong>Your input:</strong> One high-res scan + 2 sentences.<br><strong>AI output:</strong> 30 formatted posts across Instagram, LinkedIn, Pinterest.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:20%;background:var(--success);"></div></div><div class="effort-label">Low effort / High impact</div></div></div>
+      <div class="idea-card"><div class="idea-number">02</div><div class="idea-icon">🔍</div><h3>Opportunity Radar</h3><div class="idea-what">AI monitors Reedsy, publisher job boards, game studio art calls. Filters for your genres. Delivers weekly digest of matching opportunities with fit scores.</div><div class="idea-how"><strong>Your input:</strong> Approve your style profile once.<br><strong>AI output:</strong> Weekly email with 5–10 qualified leads.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:25%;background:var(--success);"></div></div><div class="effort-label">Low effort / High impact</div></div></div>
+      <div class="idea-card"><div class="idea-number">03</div><div class="idea-icon">🌐</div><h3>Living Portfolio Site</h3><div class="idea-what">Upgrade from static gallery to searchable, filterable, story-driven experience. Each piece with process notes, genre tags, availability. SEO-optimized for art directors.</div><div class="idea-how"><strong>Your input:</strong> Your existing portfolio images.<br><strong>AI output:</strong> Complete site with copy, SEO, filtering, analytics.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:45%;background:var(--gold);"></div></div><div class="effort-label">Medium effort / High impact</div></div></div>
+      <div class="idea-card"><div class="idea-number">04</div><div class="idea-icon">🎬</div><h3>Paintings That Move</h3><div class="idea-what">Subtle animation from finished oils: flickering torchlight in Monte Cristo, drifting clouds behind airships. 10-second loops that stop the scroll.</div><div class="idea-how"><strong>Your input:</strong> High-res scans with layer notes.<br><strong>AI output:</strong> Animated loops + social-ready video cuts.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:40%;background:var(--gold);"></div></div><div class="effort-label">Medium effort / High engagement</div></div></div>
+      <div class="idea-card"><div class="idea-number">05</div><div class="idea-icon">📖</div><h3>Narrative Prompt Engine</h3><div class="idea-what">AI generates rich scene descriptions calibrated to your palette, composition style, genre sweet spots. "A scholar descends a spiral staircase carved from living wood..." Fuel for personal work.</div><div class="idea-how"><strong>Your input:</strong> Select mood/genre/complexity.<br><strong>AI output:</strong> 5 detailed scene prompts with reference boards.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:30%;background:var(--success);"></div></div><div class="effort-label">Low effort / Creative fuel</div></div></div>
+      <div class="idea-card"><div class="idea-number">06</div><div class="idea-icon">🏛️</div><h3>Immersive Gallery Experience</h3><div class="idea-what">3D web gallery. Designed environment with lighting, ambient sound, guided tours by theme. Your own exhibition, open 24/7, shareable by link.</div><div class="idea-how"><strong>Your input:</strong> Curated selection of 15–20 pieces.<br><strong>AI output:</strong> Complete 3D gallery with narrated tour.</div><div class="effort-bar"><div class="effort-track"><div class="effort-fill" style="width:70%;background:var(--accent3);"></div></div><div class="effort-label">Higher effort / Showcase piece</div></div></div>
     </div>
-
-    <!-- CTA -->
     <div class="cta-block">
       <h3>This whole page is the demo</h3>
-      <p>
-        Everything you're looking at was built by AI in a single session — the research,
-        the portfolio analysis, the knowledge graph, the style extraction, this design.
-        Not to replace what you do. To show what happens when someone who understands
-        your craft points these tools in the right direction.
-      </p>
-      <p style="margin-top: 1rem;">
-        If any of these ideas resonate — even one — let's talk about building it.
-        No pitch. Just a conversation about your workflow and where the friction lives.
-      </p>
-      <div class="cta-sig">
-        <strong>Daniel Yarmoluk</strong> · Cognify<br>
-        <span style="color:var(--accent);">dankatzart@gmail.com</span> — let's start there
-      </div>
+      <p>Everything you're looking at was built by AI in a single session — the research, portfolio analysis, knowledge graph, style extraction, this design. Not to replace what you do. To show what happens when someone who understands your craft points these tools in the right direction.</p>
+      <p style="margin-top:1rem;">If any of these ideas resonate — even one — let's talk about building it. No pitch. Just a conversation about your workflow and where the friction lives.</p>
+      <div class="cta-sig"><strong>Daniel Yarmoluk</strong> · Cognify<br><span style="color:var(--accent);">dankatzart@gmail.com</span> — let's start there</div>
     </div>
   </div>
 </div>
@@ -1072,227 +871,359 @@
   <span style="margin-top:0.25rem;display:inline-block;">Your art is the product. AI is just the amplifier.</span>
 </footer>
 
-<!-- ===== SCRIPTS ===== -->
 <script>
 // === Navigation ===
 document.querySelectorAll('.nav-tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    const viewId = tab.dataset.view;
-    goTo(viewId, tab);
-  });
+  tab.addEventListener('click', () => goTo(tab.dataset.view, tab));
 });
-
 function goTo(viewId, clickedTab) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById(viewId).classList.add('active');
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  if (clickedTab) {
-    clickedTab.classList.add('active');
-  } else {
-    document.querySelectorAll('.nav-tab').forEach(t => {
-      if (t.dataset.view === viewId) t.classList.add('active');
-    });
-  }
+  if (clickedTab) clickedTab.classList.add('active');
+  else document.querySelectorAll('.nav-tab').forEach(t => { if (t.dataset.view === viewId) t.classList.add('active'); });
   window.scrollTo(0, 0);
-  if (viewId === 'v-graph' && !kgInitialized) initKG();
+  if (viewId === 'v-graph' && !kgInit) initKG();
+  if (viewId === 'v-artgraph' && !agInit) initAG();
   if (viewId === 'v-style') animateDNA();
 }
 
-// === Style DNA Visualizations ===
+// === Style DNA ===
 let dnaAnimated = false;
 function animateDNA() {
-  if (dnaAnimated) return;
-  dnaAnimated = true;
-
-  // Palette bars
-  const paletteColors = ['#2a1f14','#5a4a3a','#8b6914','#c2956a','#c4a35a','#d4956a','#e8c49a','#6ba8c4','#4a6b3a','#d44a00'];
-  const paletteHeights = [65, 72, 55, 78, 50, 60, 45, 35, 40, 30];
-  const palEl = document.getElementById('dna-palette');
-  paletteColors.forEach((c, i) => {
-    const bar = document.createElement('div');
-    bar.className = 'dna-bar';
-    bar.style.background = c;
-    bar.style.height = '0px';
-    palEl.appendChild(bar);
-    setTimeout(() => { bar.style.height = paletteHeights[i] + 'px'; }, i * 60);
-  });
-
-  // Composition bars
-  const compEl = document.getElementById('dna-comp');
-  const compH = [50, 75, 40, 65, 55, 70, 35, 60, 45, 58];
-  compH.forEach((h, i) => {
-    const bar = document.createElement('div');
-    bar.className = 'dna-bar';
-    bar.style.background = `rgba(139,92,246,${0.3 + (h/75)*0.7})`;
-    bar.style.height = '0px';
-    compEl.appendChild(bar);
-    setTimeout(() => { bar.style.height = h + 'px'; }, i * 60);
-  });
-
-  // Mood bars
-  const moodEl = document.getElementById('dna-mood');
-  const moodData = [
-    { h: 70, c: '#ec4899' }, { h: 45, c: '#8b5cf6' }, { h: 60, c: '#f59e0b' },
-    { h: 55, c: '#10b981' }, { h: 75, c: '#ec4899' }, { h: 40, c: '#06b6d4' },
-    { h: 65, c: '#8b5cf6' }, { h: 50, c: '#f59e0b' }, { h: 35, c: '#10b981' }, { h: 68, c: '#ec4899' }
-  ];
-  moodData.forEach((d, i) => {
-    const bar = document.createElement('div');
-    bar.className = 'dna-bar';
-    bar.style.background = d.c;
-    bar.style.height = '0px';
-    moodEl.appendChild(bar);
-    setTimeout(() => { bar.style.height = d.h + 'px'; }, i * 60);
-  });
-
-  // Genre bars
-  const genreEl = document.getElementById('dna-genre');
-  const genres = [
-    { h: 75, l: 'Fantasy' }, { h: 55, l: 'Sci-Fi' }, { h: 45, l: 'Literary' },
-    { h: 65, l: 'Game' }, { h: 35, l: 'Whimsy' }, { h: 50, l: 'Character' },
-    { h: 40, l: 'Steampunk' }, { h: 30, l: 'Portrait' }, { h: 25, l: 'Landscape' }, { h: 20, l: 'Pop' }
-  ];
-  genres.forEach((g, i) => {
-    const bar = document.createElement('div');
-    bar.className = 'dna-bar';
-    bar.style.background = `rgba(217,119,6,${0.25 + (g.h/75)*0.75})`;
-    bar.style.height = '0px';
-    genreEl.appendChild(bar);
-    setTimeout(() => { bar.style.height = g.h + 'px'; }, i * 60);
+  if (dnaAnimated) return; dnaAnimated = true;
+  const palC = ['#2a1f14','#5a4a3a','#8b6914','#c2956a','#c4a35a','#d4956a','#e8c49a','#6ba8c4','#4a6b3a','#d44a00'];
+  const palH = [65,72,55,78,50,60,45,35,40,30];
+  buildBars('dna-palette', palC, palH);
+  buildBars('dna-comp', Array(10).fill(0).map((_,i)=>`rgba(139,92,246,${0.3+([50,75,40,65,55,70,35,60,45,58][i]/75)*0.7})`), [50,75,40,65,55,70,35,60,45,58]);
+  const mC = ['#ec4899','#8b5cf6','#f59e0b','#10b981','#ec4899','#06b6d4','#8b5cf6','#f59e0b','#10b981','#ec4899'];
+  buildBars('dna-mood', mC, [70,45,60,55,75,40,65,50,35,68]);
+  buildBars('dna-genre', Array(10).fill(0).map((_,i)=>`rgba(217,119,6,${0.25+([75,55,45,65,35,50,40,30,25,20][i]/75)*0.75})`), [75,55,45,65,35,50,40,30,25,20]);
+}
+function buildBars(id, colors, heights) {
+  const el = document.getElementById(id);
+  colors.forEach((c,i) => {
+    const b = document.createElement('div'); b.className = 'dna-bar';
+    b.style.background = c; b.style.height = '0px'; el.appendChild(b);
+    setTimeout(() => { b.style.height = heights[i] + 'px'; }, i * 60);
   });
 }
 
-// === Knowledge Graph ===
-let kgInitialized = false;
-const kgNodes = [
-  // Core (oil warm)
-  { id:0, l:'Dan Katz', x:0, y:0, r:30, c:'#c2956a', g:'identity' },
-  { id:1, l:'Atlanta, GA', x:-90, y:-85, r:12, c:'#c2956a', g:'identity' },
-  { id:2, l:'CCAD \'09', x:-160, y:-45, r:13, c:'#c2956a', g:'identity' },
-  { id:3, l:'IMC 2009-18', x:-175, y:30, r:12, c:'#c2956a', g:'identity' },
-  { id:4, l:'Smart Art School', x:-155, y:90, r:11, c:'#c2956a', g:'identity' },
-  // Skills (purple)
-  { id:5, l:'Oil Painting', x:-80, y:50, r:22, c:'#8b5cf6', g:'skill' },
-  { id:6, l:'Painterly Realism', x:-120, y:130, r:16, c:'#8b5cf6', g:'skill' },
-  { id:7, l:'Composition', x:-210, y:120, r:14, c:'#8b5cf6', g:'skill' },
-  { id:8, l:'Color Theory', x:-230, y:-10, r:13, c:'#8b5cf6', g:'skill' },
-  { id:9, l:'Narrative Design', x:-70, y:140, r:14, c:'#8b5cf6', g:'skill' },
-  { id:10, l:'Translucent Layering', x:-180, y:170, r:11, c:'#8b5cf6', g:'skill' },
-  // Works (pink)
-  { id:11, l:'Little Mermaid', x:50, y:-160, r:14, c:'#ec4899', g:'work' },
-  { id:12, l:'Monte Cristo', x:130, y:-140, r:14, c:'#ec4899', g:'work' },
-  { id:13, l:'Crush of Wurms', x:190, y:-80, r:15, c:'#ec4899', g:'work' },
-  { id:14, l:'Banefire', x:210, y:-10, r:13, c:'#ec4899', g:'work' },
-  { id:15, l:'Airship Series', x:180, y:60, r:15, c:'#ec4899', g:'work' },
-  { id:16, l:'Dragon Commute', x:140, y:120, r:13, c:'#ec4899', g:'work' },
-  { id:17, l:'Astronaut', x:70, y:150, r:12, c:'#ec4899', g:'work' },
-  { id:18, l:'The Lovebirds', x:-10, y:-140, r:13, c:'#ec4899', g:'work' },
-  { id:19, l:'Language of Love', x:50, y:100, r:11, c:'#ec4899', g:'work' },
-  // Genres (warm)
-  { id:20, l:'Fantasy', x:250, y:-140, r:18, c:'#d97706', g:'genre' },
-  { id:21, l:'Science Fiction', x:280, y:-50, r:16, c:'#d97706', g:'genre' },
-  { id:22, l:'Literary Fiction', x:260, y:30, r:15, c:'#d97706', g:'genre' },
-  { id:23, l:'Young Adult', x:300, y:-100, r:12, c:'#d97706', g:'genre' },
-  { id:24, l:'Game Art', x:270, y:100, r:14, c:'#d97706', g:'genre' },
-  { id:25, l:'Steampunk', x:220, y:140, r:12, c:'#d97706', g:'genre' },
-  { id:26, l:'Whimsical', x:160, y:180, r:12, c:'#d97706', g:'genre' },
-  { id:27, l:'Book Covers', x:310, y:30, r:14, c:'#d97706', g:'genre' },
-  // Platforms (cyan)
-  { id:28, l:'Portfolio Site', x:-50, y:-220, r:14, c:'#06b6d4', g:'platform' },
-  { id:29, l:'Instagram', x:40, y:-220, r:14, c:'#06b6d4', g:'platform' },
-  { id:30, l:'Reedsy', x:130, y:-210, r:14, c:'#06b6d4', g:'platform' },
-  { id:31, l:'Saatchi Art', x:-130, y:-200, r:12, c:'#06b6d4', g:'platform' },
-  { id:32, l:'Commissions', x:0, y:-280, r:13, c:'#06b6d4', g:'platform' },
-  // Traits (green)
-  { id:33, l:'Warm Shadows', x:-260, y:-80, r:10, c:'#10b981', g:'trait' },
-  { id:34, l:'Cinematic Eye', x:-240, y:60, r:10, c:'#10b981', g:'trait' },
-  { id:35, l:'Physical Texture', x:-100, y:200, r:11, c:'#10b981', g:'trait' },
-  { id:36, l:'Tonal Range', x:-200, y:-120, r:10, c:'#10b981', g:'trait' },
-  { id:37, l:'Emotional Depth', x:0, y:200, r:11, c:'#10b981', g:'trait' },
-  { id:38, l:'Humor + Gravity', x:100, y:200, r:10, c:'#10b981', g:'trait' },
-  // Education sub
-  { id:39, l:'B.A. Illustration', x:-220, y:-90, r:10, c:'#c2956a', g:'identity' },
-  { id:40, l:'Kason Industries', x:-140, y:-140, r:10, c:'#c2956a', g:'identity' },
-  // Freelance
-  { id:41, l:'Freelance 2022+', x:-50, y:-120, r:11, c:'#06b6d4', g:'platform' },
-  // Studies
-  { id:42, l:'18 Studies', x:-30, y:60, r:11, c:'#ec4899', g:'work' },
-  { id:43, l:'Nancy', x:100, y:-100, r:10, c:'#ec4899', g:'work' },
-  { id:44, l:'Along the River', x:30, y:50, r:10, c:'#ec4899', g:'work' },
+// ============================================================
+// ART CONSTELLATION GRAPH — paintings as palette-ringed nodes
+// ============================================================
+let agInit = false;
+const artworks = [
+  { id:0, l:'The Little\nMermaid', x:0, y:-180, r:32, genre:'literary',
+    pal:['#2d5a7b','#6ba8c4','#c9a86c','#f0e6d3'], mood:'Ethereal', tech:'Translucent layering, diffused light' },
+  { id:1, l:'Count of\nMonte Cristo', x:-160, y:-90, r:30, genre:'literary',
+    pal:['#2a1f14','#8b6914','#c4a35a','#e8d9b0'], mood:'Dramatic', tech:'Old Master palette, chiaroscuro' },
+  { id:2, l:'The\nLovebirds', x:-220, y:40, r:26, genre:'character',
+    pal:['#d4956a','#e8c49a','#7a4830','#f5e6d0'], mood:'Tender', tech:'Warm skin tones, intimate framing' },
+  { id:3, l:'Crush of\nWurms', x:180, y:-120, r:34, genre:'game',
+    pal:['#1a2a1a','#4a6b3a','#8b7355','#c4b896'], mood:'Menacing', tech:'Dynamic diagonals, creature anatomy' },
+  { id:4, l:'Banefire', x:240, y:10, r:28, genre:'game',
+    pal:['#8b1a1a','#d44a00','#f5a623','#ffe0a0'], mood:'Explosive', tech:'Fire spectrum, cinematic action' },
+  { id:5, l:'Airship\nSeries', x:-60, y:60, r:36, genre:'steampunk',
+    pal:['#5a4a3a','#8b7d6b','#c4b89a','#e0d8c8'], mood:'Adventurous', tech:'Atmospheric perspective, world-building' },
+  { id:6, l:'Dragon\nCommute', x:80, y:140, r:28, genre:'whimsical',
+    pal:['#4a7a4a','#7ab87a','#d4a574','#f0e0c0'], mood:'Playful', tech:'High technique on absurd premise' },
+  { id:7, l:'Dragon\nHot Ride', x:190, y:160, r:22, genre:'whimsical',
+    pal:['#5a8a5a','#a0c890','#c4a080','#e8d8b8'], mood:'Playful', tech:'Series consistency, humor' },
+  { id:8, l:'Astronaut', x:-140, y:170, r:26, genre:'scifi',
+    pal:['#0a1628','#1e3a5f','#e0e0e0','#f5a623'], mood:'Contemplative', tech:'Solitary figure, vast space' },
+  { id:9, l:'Language\nof Love', x:0, y:200, r:22, genre:'character',
+    pal:['#6b8e6b','#a0b890','#c9956a','#e8dcc8'], mood:'Whimsical', tech:'Fantastical realism' },
+  { id:10, l:'Along the\nRiver', x:-240, y:-40, r:22, genre:'character',
+    pal:['#4a6a4a','#8aaa7a','#b89a70','#d8c8a8'], mood:'Contemplative', tech:'Naturalistic color study' },
+  { id:11, l:'Nancy', x:260, y:-60, r:20, genre:'character',
+    pal:['#c4956a','#e0b898','#8a6040','#f0dcc0'], mood:'Observational', tech:'Portrait fundamentals' },
+  { id:12, l:'Walk the\nPlank', x:-120, y:-10, r:22, genre:'steampunk',
+    pal:['#6a5a4a','#9a8a7a','#c4b49a','#dcd0c0'], mood:'Tense', tech:'Narrative action, steampunk' },
+  { id:13, l:'Sailing', x:-40, y:120, r:20, genre:'steampunk',
+    pal:['#5a5040','#8a7a68','#b8a888','#d4c8b0'], mood:'Serene', tech:'Atmospheric depth' },
+  { id:14, l:'Bonus\nDedede', x:140, y:-20, r:20, genre:'whimsical',
+    pal:['#d04040','#f08060','#f5c040','#f8e0a0'], mood:'Fun', tech:'Character illustration, pop culture' },
+  { id:15, l:'Sonic', x:300, y:100, r:18, genre:'whimsical',
+    pal:['#2040c0','#40a0f0','#f0c040','#f5e8c0'], mood:'Energetic', tech:'Pop culture reinterpretation' },
 ];
 
+// Connections: [a, b, strength, reason]
+const artEdges = [
+  [0,1,3,'Literary adaptations, narrative depth'],
+  [0,2,2,'Warm palette accents, emotional register'],
+  [1,2,2,'Character focus, warm tones'],
+  [3,4,4,'Game art, dark fantasy, action energy'],
+  [3,14,2,'Creature/character design'],
+  [5,12,4,'Airship series — same world'],
+  [5,13,4,'Airship series — same world'],
+  [12,13,3,'Steampunk world consistency'],
+  [6,7,4,'Dragon series — same concept'],
+  [6,9,2,'Whimsical tone, natural palette'],
+  [6,14,3,'Humor, character playfulness'],
+  [7,15,2,'Pop culture energy'],
+  [8,0,2,'Solitary mood, atmospheric depth'],
+  [8,10,2,'Contemplative quiet, naturalistic'],
+  [2,9,2,'Character warmth, earth tones'],
+  [2,11,3,'Portrait skill, figure painting'],
+  [9,10,3,'Natural earth palette, character-driven'],
+  [1,3,1,'Dark palette, dramatic weight'],
+  [4,14,2,'Warm-hot palette, energy'],
+  [0,8,2,'Cool palette with warm accents'],
+  [5,8,1,'World-building, atmospheric technique'],
+  [11,10,2,'Quieter register, observational'],
+];
+
+const genreColors = {
+  literary:'#ec4899', game:'#6366f1', steampunk:'#06b6d4',
+  whimsical:'#10b981', scifi:'#8b5cf6', character:'#d97706'
+};
+
+let agCanvas, agCtx, agW, agH, agHovered = null, agOffX = 0, agOffY = 0;
+let agDrag = false, agDX, agDY, agTime = 0;
+
+function initAG() {
+  agInit = true;
+  agCanvas = document.getElementById('ag-canvas');
+  agCtx = agCanvas.getContext('2d');
+  agResize();
+  window.addEventListener('resize', agResize);
+  agCanvas.addEventListener('mousemove', agMove);
+  agCanvas.addEventListener('click', agClick);
+  agCanvas.addEventListener('mousedown', e => { agDrag = true; agDX = e.clientX; agDY = e.clientY; });
+  agCanvas.addEventListener('mouseup', () => agDrag = false);
+  agCanvas.addEventListener('mouseleave', () => agDrag = false);
+  requestAnimationFrame(agDraw);
+}
+
+function agResize() {
+  const c = document.getElementById('ag-container');
+  agW = c.clientWidth; agH = c.clientHeight;
+  agCanvas.width = agW * devicePixelRatio;
+  agCanvas.height = agH * devicePixelRatio;
+  agCanvas.style.width = agW + 'px';
+  agCanvas.style.height = agH + 'px';
+  agCtx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+}
+
+function agDraw() {
+  agTime += 0.003;
+  agCtx.clearRect(0, 0, agW, agH);
+  const cx = agW / 2 + agOffX, cy = agH / 2 + agOffY;
+
+  // Edges with varying thickness
+  artEdges.forEach(([a, b, str, reason]) => {
+    const na = artworks[a], nb = artworks[b];
+    const ax = cx + na.x + Math.sin(agTime + na.id) * 2;
+    const ay = cy + na.y + Math.cos(agTime + na.id * 0.7) * 2;
+    const bx = cx + nb.x + Math.sin(agTime + nb.id) * 2;
+    const by = cy + nb.y + Math.cos(agTime + nb.id * 0.7) * 2;
+    const hl = agHovered && (agHovered.id === a || agHovered.id === b);
+    agCtx.strokeStyle = hl ? 'rgba(194,149,106,0.45)' : `rgba(194,149,106,${0.03 + str * 0.02})`;
+    agCtx.lineWidth = hl ? str * 1.2 : str * 0.6;
+    agCtx.beginPath(); agCtx.moveTo(ax, ay); agCtx.lineTo(bx, by); agCtx.stroke();
+  });
+
+  // Nodes with palette rings
+  artworks.forEach(n => {
+    const nx = cx + n.x + Math.sin(agTime + n.id) * 2;
+    const ny = cy + n.y + Math.cos(agTime + n.id * 0.7) * 2;
+    const isH = agHovered && agHovered.id === n.id;
+    const r = isH ? n.r * 1.25 : n.r;
+    const gc = genreColors[n.genre];
+
+    // Outer glow
+    const grd = agCtx.createRadialGradient(nx, ny, r * 0.5, nx, ny, r * 3);
+    grd.addColorStop(0, gc + '20'); grd.addColorStop(1, 'transparent');
+    agCtx.fillStyle = grd;
+    agCtx.beginPath(); agCtx.arc(nx, ny, r * 3, 0, Math.PI * 2); agCtx.fill();
+
+    // Palette ring — each color gets a segment
+    const segAngle = (Math.PI * 2) / n.pal.length;
+    n.pal.forEach((col, i) => {
+      agCtx.beginPath();
+      agCtx.arc(nx, ny, r, segAngle * i - Math.PI/2, segAngle * (i + 1) - Math.PI/2);
+      agCtx.arc(nx, ny, r * 0.6, segAngle * (i + 1) - Math.PI/2, segAngle * i - Math.PI/2, true);
+      agCtx.closePath();
+      agCtx.fillStyle = col;
+      agCtx.fill();
+    });
+
+    // Inner circle (genre color)
+    agCtx.fillStyle = gc + (isH ? '' : 'cc');
+    agCtx.beginPath(); agCtx.arc(nx, ny, r * 0.58, 0, Math.PI * 2); agCtx.fill();
+
+    // Hover border
+    if (isH) {
+      agCtx.strokeStyle = '#fff';
+      agCtx.lineWidth = 2.5;
+      agCtx.beginPath(); agCtx.arc(nx, ny, r + 2, 0, Math.PI * 2); agCtx.stroke();
+    }
+
+    // Label
+    const fs = Math.max(9, r * 0.32);
+    agCtx.fillStyle = isH ? '#fff' : '#c8d0dc';
+    agCtx.font = `${isH ? '700' : '500'} ${fs}px Inter, sans-serif`;
+    agCtx.textAlign = 'center';
+    const lines = n.l.split('\n');
+    lines.forEach((line, li) => {
+      agCtx.fillText(line, nx, ny + r + 13 + li * (fs + 2));
+    });
+  });
+
+  requestAnimationFrame(agDraw);
+}
+
+function agMove(e) {
+  const rect = agCanvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+  if (agDrag) {
+    agOffX += e.clientX - agDX; agOffY += e.clientY - agDY;
+    agDX = e.clientX; agDY = e.clientY; return;
+  }
+  const cx = agW / 2 + agOffX, cy = agH / 2 + agOffY;
+  agHovered = null;
+  for (const n of artworks) {
+    const nx = cx + n.x + Math.sin(agTime + n.id) * 2;
+    const ny = cy + n.y + Math.cos(agTime + n.id * 0.7) * 2;
+    if (Math.sqrt((mx-nx)**2 + (my-ny)**2) < n.r + 5) {
+      agHovered = n; agCanvas.style.cursor = 'pointer'; break;
+    }
+  }
+  if (!agHovered) agCanvas.style.cursor = 'grab';
+}
+
+function agClick() {
+  if (!agHovered) return;
+  const el = document.getElementById('ag-detail');
+  const n = agHovered;
+  const connections = artEdges.filter(e => e[0] === n.id || e[1] === n.id);
+  const connHTML = connections.map(([a,b,str,reason]) => {
+    const other = artworks[a === n.id ? b : a];
+    return `<span class="ag-tag">${other.l.replace('\n',' ')} — ${reason}</span>`;
+  }).join('');
+  el.innerHTML = `
+    <h4 style="color:${genreColors[n.genre]};">${n.l.replace('\n',' ')}</h4>
+    <p style="color:var(--dim);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;">Mood: ${n.mood} · ${n.tech}</p>
+    <div class="ag-swatches">${n.pal.map(c=>`<div class="ag-sw" style="background:${c};"></div>`).join('')}</div>
+    <p style="color:var(--dim);font-size:0.7rem;margin:0.5rem 0 0.25rem;">Connected to:</p>
+    <div class="ag-tags">${connHTML}</div>`;
+}
+
+// ============================================================
+// KNOWLEDGE GRAPH
+// ============================================================
+let kgInit = false;
+const kgNodes = [
+  {id:0,l:'Dan Katz',x:0,y:0,r:30,c:'#c2956a',g:'identity'},
+  {id:1,l:'Atlanta, GA',x:-90,y:-85,r:12,c:'#c2956a',g:'identity'},
+  {id:2,l:'CCAD \'09',x:-160,y:-45,r:13,c:'#c2956a',g:'identity'},
+  {id:3,l:'IMC 2009-18',x:-175,y:30,r:12,c:'#c2956a',g:'identity'},
+  {id:4,l:'Smart Art School',x:-155,y:90,r:11,c:'#c2956a',g:'identity'},
+  {id:5,l:'Oil Painting',x:-80,y:50,r:22,c:'#8b5cf6',g:'skill'},
+  {id:6,l:'Painterly Realism',x:-120,y:130,r:16,c:'#8b5cf6',g:'skill'},
+  {id:7,l:'Composition',x:-210,y:120,r:14,c:'#8b5cf6',g:'skill'},
+  {id:8,l:'Color Theory',x:-230,y:-10,r:13,c:'#8b5cf6',g:'skill'},
+  {id:9,l:'Narrative Design',x:-70,y:140,r:14,c:'#8b5cf6',g:'skill'},
+  {id:10,l:'Translucent Layering',x:-180,y:170,r:11,c:'#8b5cf6',g:'skill'},
+  {id:11,l:'Little Mermaid',x:50,y:-160,r:14,c:'#ec4899',g:'work'},
+  {id:12,l:'Monte Cristo',x:130,y:-140,r:14,c:'#ec4899',g:'work'},
+  {id:13,l:'Crush of Wurms',x:190,y:-80,r:15,c:'#ec4899',g:'work'},
+  {id:14,l:'Banefire',x:210,y:-10,r:13,c:'#ec4899',g:'work'},
+  {id:15,l:'Airship Series',x:180,y:60,r:15,c:'#ec4899',g:'work'},
+  {id:16,l:'Dragon Commute',x:140,y:120,r:13,c:'#ec4899',g:'work'},
+  {id:17,l:'Astronaut',x:70,y:150,r:12,c:'#ec4899',g:'work'},
+  {id:18,l:'The Lovebirds',x:-10,y:-140,r:13,c:'#ec4899',g:'work'},
+  {id:19,l:'Language of Love',x:50,y:100,r:11,c:'#ec4899',g:'work'},
+  {id:20,l:'Fantasy',x:250,y:-140,r:18,c:'#d97706',g:'genre'},
+  {id:21,l:'Science Fiction',x:280,y:-50,r:16,c:'#d97706',g:'genre'},
+  {id:22,l:'Literary Fiction',x:260,y:30,r:15,c:'#d97706',g:'genre'},
+  {id:23,l:'Young Adult',x:300,y:-100,r:12,c:'#d97706',g:'genre'},
+  {id:24,l:'Game Art',x:270,y:100,r:14,c:'#d97706',g:'genre'},
+  {id:25,l:'Steampunk',x:220,y:140,r:12,c:'#d97706',g:'genre'},
+  {id:26,l:'Whimsical',x:160,y:180,r:12,c:'#d97706',g:'genre'},
+  {id:27,l:'Book Covers',x:310,y:30,r:14,c:'#d97706',g:'genre'},
+  {id:28,l:'Portfolio Site',x:-50,y:-220,r:14,c:'#06b6d4',g:'platform'},
+  {id:29,l:'Instagram',x:40,y:-220,r:14,c:'#06b6d4',g:'platform'},
+  {id:30,l:'Reedsy',x:130,y:-210,r:14,c:'#06b6d4',g:'platform'},
+  {id:31,l:'Saatchi Art',x:-130,y:-200,r:12,c:'#06b6d4',g:'platform'},
+  {id:32,l:'Commissions',x:0,y:-280,r:13,c:'#06b6d4',g:'platform'},
+  {id:33,l:'Warm Shadows',x:-260,y:-80,r:10,c:'#10b981',g:'trait'},
+  {id:34,l:'Cinematic Eye',x:-240,y:60,r:10,c:'#10b981',g:'trait'},
+  {id:35,l:'Physical Texture',x:-100,y:200,r:11,c:'#10b981',g:'trait'},
+  {id:36,l:'Tonal Range',x:-200,y:-120,r:10,c:'#10b981',g:'trait'},
+  {id:37,l:'Emotional Depth',x:0,y:200,r:11,c:'#10b981',g:'trait'},
+  {id:38,l:'Humor + Gravity',x:100,y:200,r:10,c:'#10b981',g:'trait'},
+  {id:39,l:'B.A. Illustration',x:-220,y:-90,r:10,c:'#c2956a',g:'identity'},
+  {id:40,l:'Kason Industries',x:-140,y:-140,r:10,c:'#c2956a',g:'identity'},
+  {id:41,l:'Freelance 2022+',x:-50,y:-120,r:11,c:'#06b6d4',g:'platform'},
+  {id:42,l:'18 Studies',x:-30,y:60,r:11,c:'#ec4899',g:'work'},
+  {id:43,l:'Nancy',x:100,y:-100,r:10,c:'#ec4899',g:'work'},
+  {id:44,l:'Along the River',x:30,y:50,r:10,c:'#ec4899',g:'work'},
+];
 const kgEdges = [
-  // Core connections
   [0,1],[0,2],[0,3],[0,4],[0,5],[2,39],[1,40],[0,41],
-  // Skills
   [5,6],[5,7],[5,8],[5,9],[5,10],[6,35],[7,34],[8,33],[9,37],
-  // Works to center
   [0,11],[0,12],[0,13],[0,14],[0,15],[0,16],[0,17],[0,18],[0,19],[0,42],[0,43],[0,44],
-  // Works to genres
   [11,22],[12,22],[13,20],[13,24],[14,20],[14,24],[15,25],[16,26],[17,21],[18,22],[19,26],
-  // Genres
   [20,23],[20,27],[21,27],[22,27],[24,27],
-  // Platforms
   [0,28],[0,29],[0,30],[0,31],[28,32],[30,32],[41,32],
-  // Traits
   [5,35],[6,36],[16,38],[18,37],[12,37],[13,36],
-  // Cross-connections
   [29,28],[30,27],[3,7],[4,8],[2,5],
 ];
-
 const kgDetails = {
-  'Dan Katz': 'Atlanta-based oil painter and illustrator. 15+ years mastering narrative art across fantasy, sci-fi, and literary genres. CCAD alumnus. The central node connecting all elements of his creative practice.',
-  'Atlanta, GA': 'Home base. A growing hub for creative talent with lower cost of living than NYC/LA, meaning more studio hours per dollar.',
-  'CCAD \'09': 'Columbus College of Art & Design. B.A. in Illustration (2005-2009). Formal foundation in traditional techniques.',
-  'IMC 2009-18': 'Illustration Master Class. Nearly a decade of advanced study under industry masters. This is where good illustrators become great ones.',
-  'Smart Art School': 'Advanced studies in multiple sessions (2016-2022). Continuous improvement mindset — Dan never stopped studying.',
-  'Oil Painting': 'Primary medium. Not digital, not acrylic — oil. Slow-drying, rich pigment, centuries of tradition. Requires patience and skill that can\'t be shortcut.',
-  'Painterly Realism': 'Dan\'s signature approach: realistic enough to serve narrative, painterly enough to show the hand. Not photorealism — authored realism.',
-  'Composition': 'Classical staging with modern sensibility. Asymmetric focal points, dynamic diagonals, cinematic depth-of-field effects unusual in oil painting.',
-  'Color Theory': 'Earth-dominant palettes with strategic saturated accents. Warm underlayer philosophy — even cold scenes have warm shadows.',
-  'Narrative Design': 'Every painting tells a story. Not decoration — communication. This is what separates illustration from fine art.',
-  'Translucent Layering': 'Dan\'s oil handling creates watercolor-like translucency in places. A technical signature that gives his paintings atmospheric depth.',
-  'Little Mermaid': 'Literary adaptation. Aquatic dreamscape, diffused light, romantic melancholy. Cool palette with warm accents — emotional storytelling through color.',
-  'Monte Cristo': 'Classical drama. Dark, rich tones with strategic highlights. The weight of betrayal rendered in Old Master palette.',
-  'Crush of Wurms': 'Dark fantasy creature piece. Dynamic organic forms, controlled chaos. Shows Dan\'s ability to paint power and menace.',
-  'Banefire': 'Magical combat. Fire-spectrum palette, cinematic action framing. Proves range from subtle to explosive.',
-  'Airship Series': 'Three-piece cohesive world. Sepia-muted, atmospheric perspective. Demonstrates world-building capacity across multiple paintings.',
-  'Dragon Commute': 'Mythological creature in mundane setting. High technique + absurd premise = Dan\'s humor. Shows tonal range.',
-  'Astronaut': 'Solitary sci-fi figure. Existential quiet. Demonstrates that Dan can paint stillness as powerfully as action.',
-  'The Lovebirds': 'Intimate character study. Warm skin tones, close framing, emotional tenderness. Dan paints feeling, not just form.',
-  'Language of Love': 'Fantastical realism. Quirky subject with dead-serious technique. The charm lives in the gap between form and content.',
-  'Fantasy': 'Core genre. Highest volume in portfolio. Creatures, magic, world-building. The market Dan knows best.',
-  'Science Fiction': 'Secondary strength. Astronaut, tech-adjacent pieces. Less volume but strong capability.',
-  'Literary Fiction': 'Literary adaptations (Mermaid, Monte Cristo). Shows Dan can interpret existing narratives, not just invent.',
-  'Young Adult': 'Accessible genre that values Dan\'s combination of approachable style and narrative depth.',
-  'Game Art': 'MTG-adjacent pieces. High demand market with strong rates. Dan\'s creature work maps directly.',
-  'Steampunk': 'Airship series. Niche but devoted audience. Dan\'s atmospheric technique is perfect for retro-futurism.',
-  'Whimsical': 'Dragon series, Goat-Man. Shows Dan doesn\'t take himself too seriously. Endearing to followers.',
-  'Book Covers': 'Primary commercial application. Fantasy, sci-fi, literary fiction covers. Available through Reedsy.',
-  'Portfolio Site': 'dankatzillustration.com. Current gallery + studies + contact. Functional but could work harder.',
-  'Instagram': '@artsmandan. Primary social channel. 935+ posts. Movie character drawings on @danjoelkatz.',
-  'Reedsy': 'Professional marketplace for book illustrators. Dan\'s primary client acquisition channel for publishing work.',
-  'Saatchi Art': 'Fine art marketplace. Lower activity but positions Dan in the art collector space.',
-  'Commissions': 'Open for commissions and contracts. The revenue engine. Every other node should ultimately drive toward this.',
-  'Warm Shadows': 'Even cold-palette scenes have warm shadow tones. Signature trait that creates visual comfort.',
-  'Cinematic Eye': 'Depth-of-field, dramatic lighting, widescreen composition. Dan paints like a cinematographer thinks.',
-  'Physical Texture': 'Oil paint on panel has dimensionality that screens can\'t fully convey. A differentiator in a flat-digital world.',
-  'Tonal Range': 'From near-black to brilliant highlights. Dan uses the full value scale, creating depth that flat-lit digital art lacks.',
-  'Emotional Depth': 'Characters express inner life. Not just posed — inhabited. This is the hardest thing to paint.',
-  'Humor + Gravity': 'Dragon Commute lives next to Monte Cristo. Range of tone without loss of quality. Rare combination.',
-  'B.A. Illustration': 'Formal degree from a respected art school. Classical training in a contemporary context.',
-  'Kason Industries': '7+ years as graphic designer (2013-2021). Real-world design experience that informs composition and communication.',
-  'Freelance 2022+': 'Full-time freelance since late 2022. Building a client base and personal brand.',
-  '18 Studies': 'Dedicated studies section on portfolio site. Shows commitment to ongoing skill development.',
-  'Nancy': 'Portrait work. Representational style showing figure-painting fundamentals.',
-  'Along the River': 'Landscape/narrative piece. Naturalistic color study with contemplative mood. Quieter register.',
+  'Dan Katz':'Atlanta-based oil painter and illustrator. 15+ years mastering narrative art across fantasy, sci-fi, and literary genres. CCAD alumnus.',
+  'Atlanta, GA':'Home base. Growing hub for creative talent with lower cost of living than NYC/LA.',
+  'CCAD \'09':'Columbus College of Art & Design. B.A. in Illustration (2005-2009).',
+  'IMC 2009-18':'Illustration Master Class. Nearly a decade of advanced study under industry masters.',
+  'Smart Art School':'Advanced studies in multiple sessions (2016-2022). Continuous improvement.',
+  'Oil Painting':'Primary medium. Not digital, not acrylic — oil. Centuries of tradition.',
+  'Painterly Realism':'Signature approach: realistic enough to serve narrative, painterly enough to show the hand.',
+  'Composition':'Classical staging with modern sensibility. Asymmetric focal points, cinematic depth-of-field.',
+  'Color Theory':'Earth-dominant palettes with strategic saturated accents. Warm underlayer philosophy.',
+  'Narrative Design':'Every painting tells a story. Not decoration — communication.',
+  'Translucent Layering':'Oil handling creates watercolor-like translucency. Technical signature.',
+  'Little Mermaid':'Aquatic dreamscape, diffused light, romantic melancholy. Cool palette with warm accents.',
+  'Monte Cristo':'Classical drama. Dark, rich tones. The weight of betrayal in Old Master palette.',
+  'Crush of Wurms':'Dark fantasy creature piece. Dynamic organic forms, controlled chaos.',
+  'Banefire':'Magical combat. Fire-spectrum palette, cinematic action framing.',
+  'Airship Series':'Three-piece cohesive world. Sepia-muted, atmospheric perspective.',
+  'Dragon Commute':'Mythological creature in mundane setting. High technique + absurd premise.',
+  'Astronaut':'Solitary sci-fi figure. Existential quiet painted with precision.',
+  'The Lovebirds':'Intimate character study. Warm skin tones, emotional tenderness.',
+  'Language of Love':'Fantastical realism. Quirky subject with dead-serious technique.',
+  'Fantasy':'Core genre. Highest volume. Creatures, magic, world-building.',
+  'Science Fiction':'Secondary strength. Less volume but strong capability.',
+  'Literary Fiction':'Literary adaptations. Dan interprets existing narratives.',
+  'Young Adult':'Accessible genre that values Dan\'s approachable style + depth.',
+  'Game Art':'MTG-adjacent pieces. High demand market with strong rates.',
+  'Steampunk':'Airship series. Niche but devoted audience.',
+  'Whimsical':'Dragon series. Shows Dan doesn\'t take himself too seriously.',
+  'Book Covers':'Primary commercial application. Available through Reedsy.',
+  'Portfolio Site':'dankatzillustration.com. Functional but could work harder.',
+  'Instagram':'@artsmandan. 935+ posts. Movie characters on @danjoelkatz.',
+  'Reedsy':'Professional marketplace. Primary client acquisition channel.',
+  'Saatchi Art':'Fine art marketplace. Positions Dan in collector space.',
+  'Commissions':'Open for commissions. The revenue engine.',
+  'Warm Shadows':'Even cold-palette scenes have warm shadow tones. Signature.',
+  'Cinematic Eye':'Depth-of-field, dramatic lighting, widescreen composition.',
+  'Physical Texture':'Oil paint has dimensionality screens can\'t fully convey.',
+  'Tonal Range':'Near-black to brilliant highlights. Full value scale.',
+  'Emotional Depth':'Characters express inner life. Not just posed — inhabited.',
+  'Humor + Gravity':'Dragon Commute next to Monte Cristo. Rare tonal range.',
+  'B.A. Illustration':'Formal degree. Classical training in contemporary context.',
+  'Kason Industries':'7+ years graphic design (2013-2021). Informs composition.',
+  'Freelance 2022+':'Full-time freelance. Building client base and brand.',
+  '18 Studies':'Dedicated studies section. Ongoing skill development.',
+  'Nancy':'Portrait work. Representational style, figure-painting fundamentals.',
+  'Along the River':'Landscape/narrative. Naturalistic color, contemplative mood.',
 };
 
 let kgCanvas, kgCtx, kgW, kgH, kgHovered = null, kgOffX = 0, kgOffY = 0;
 let kgDrag = false, kgDX, kgDY, kgTime = 0;
 
 function initKG() {
-  kgInitialized = true;
+  kgInit = true;
   kgCanvas = document.getElementById('kg-canvas');
   kgCtx = kgCanvas.getContext('2d');
   kgResize();
@@ -1304,92 +1235,64 @@ function initKG() {
   kgCanvas.addEventListener('mouseleave', () => kgDrag = false);
   requestAnimationFrame(kgDraw);
 }
-
 function kgResize() {
   const c = document.getElementById('kg-container');
   kgW = c.clientWidth; kgH = c.clientHeight;
-  kgCanvas.width = kgW * devicePixelRatio;
-  kgCanvas.height = kgH * devicePixelRatio;
-  kgCanvas.style.width = kgW + 'px';
-  kgCanvas.style.height = kgH + 'px';
+  kgCanvas.width = kgW * devicePixelRatio; kgCanvas.height = kgH * devicePixelRatio;
+  kgCanvas.style.width = kgW + 'px'; kgCanvas.style.height = kgH + 'px';
   kgCtx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
 }
-
 function kgDraw() {
   kgTime += 0.004;
   kgCtx.clearRect(0, 0, kgW, kgH);
-  const cx = kgW / 2 + kgOffX, cy = kgH / 2 + kgOffY;
-
-  // Edges
-  kgEdges.forEach(([a, b]) => {
+  const cx = kgW/2 + kgOffX, cy = kgH/2 + kgOffY;
+  kgEdges.forEach(([a,b]) => {
     const na = kgNodes[a], nb = kgNodes[b];
-    const ax = cx + na.x + Math.sin(kgTime + na.id * 0.8) * 2;
-    const ay = cy + na.y + Math.cos(kgTime + na.id * 0.6) * 2;
-    const bx = cx + nb.x + Math.sin(kgTime + nb.id * 0.8) * 2;
-    const by = cy + nb.y + Math.cos(kgTime + nb.id * 0.6) * 2;
-    const hl = kgHovered && (kgHovered.id === a || kgHovered.id === b);
+    const ax = cx+na.x+Math.sin(kgTime+na.id*0.8)*2, ay = cy+na.y+Math.cos(kgTime+na.id*0.6)*2;
+    const bx = cx+nb.x+Math.sin(kgTime+nb.id*0.8)*2, by = cy+nb.y+Math.cos(kgTime+nb.id*0.6)*2;
+    const hl = kgHovered && (kgHovered.id===a||kgHovered.id===b);
     kgCtx.strokeStyle = hl ? 'rgba(194,149,106,0.5)' : 'rgba(194,149,106,0.07)';
     kgCtx.lineWidth = hl ? 2 : 0.8;
-    kgCtx.beginPath(); kgCtx.moveTo(ax, ay); kgCtx.lineTo(bx, by); kgCtx.stroke();
+    kgCtx.beginPath(); kgCtx.moveTo(ax,ay); kgCtx.lineTo(bx,by); kgCtx.stroke();
   });
-
-  // Nodes
   kgNodes.forEach(n => {
-    const nx = cx + n.x + Math.sin(kgTime + n.id * 0.8) * 2;
-    const ny = cy + n.y + Math.cos(kgTime + n.id * 0.6) * 2;
-    const isH = kgHovered && kgHovered.id === n.id;
-    const r = isH ? n.r * 1.35 : n.r;
-
-    // Glow
-    const g = kgCtx.createRadialGradient(nx, ny, r * 0.3, nx, ny, r * 2.8);
-    g.addColorStop(0, n.c + '30'); g.addColorStop(1, 'transparent');
+    const nx = cx+n.x+Math.sin(kgTime+n.id*0.8)*2, ny = cy+n.y+Math.cos(kgTime+n.id*0.6)*2;
+    const isH = kgHovered && kgHovered.id===n.id;
+    const r = isH ? n.r*1.35 : n.r;
+    const g = kgCtx.createRadialGradient(nx,ny,r*0.3,nx,ny,r*2.8);
+    g.addColorStop(0,n.c+'30'); g.addColorStop(1,'transparent');
     kgCtx.fillStyle = g;
-    kgCtx.beginPath(); kgCtx.arc(nx, ny, r * 2.8, 0, Math.PI * 2); kgCtx.fill();
-
-    // Node
-    kgCtx.fillStyle = n.c + (isH ? '' : 'cc');
-    kgCtx.beginPath(); kgCtx.arc(nx, ny, r, 0, Math.PI * 2); kgCtx.fill();
-
-    if (isH) { kgCtx.strokeStyle = '#fff'; kgCtx.lineWidth = 2; kgCtx.stroke(); }
-
-    // Label
-    const fs = Math.max(9, r * 0.5);
-    kgCtx.fillStyle = isH ? '#fff' : '#e2e8f0';
-    kgCtx.font = `${isH ? '700' : '500'} ${fs}px Inter, sans-serif`;
+    kgCtx.beginPath(); kgCtx.arc(nx,ny,r*2.8,0,Math.PI*2); kgCtx.fill();
+    kgCtx.fillStyle = n.c+(isH?'':'cc');
+    kgCtx.beginPath(); kgCtx.arc(nx,ny,r,0,Math.PI*2); kgCtx.fill();
+    if(isH){kgCtx.strokeStyle='#fff';kgCtx.lineWidth=2;kgCtx.stroke();}
+    const fs = Math.max(9,r*0.5);
+    kgCtx.fillStyle = isH?'#fff':'#e2e8f0';
+    kgCtx.font = `${isH?'700':'500'} ${fs}px Inter, sans-serif`;
     kgCtx.textAlign = 'center';
-    if (r > 11 || isH) kgCtx.fillText(n.l, nx, ny + r + 13);
+    if(r>11||isH) kgCtx.fillText(n.l,nx,ny+r+13);
   });
-
   requestAnimationFrame(kgDraw);
 }
-
 function kgMove(e) {
   const rect = kgCanvas.getBoundingClientRect();
-  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
-  if (kgDrag) {
-    kgOffX += e.clientX - kgDX; kgOffY += e.clientY - kgDY;
-    kgDX = e.clientX; kgDY = e.clientY; return;
-  }
-  const cx = kgW / 2 + kgOffX, cy = kgH / 2 + kgOffY;
+  const mx = e.clientX-rect.left, my = e.clientY-rect.top;
+  if(kgDrag){kgOffX+=e.clientX-kgDX;kgOffY+=e.clientY-kgDY;kgDX=e.clientX;kgDY=e.clientY;return;}
+  const cx = kgW/2+kgOffX, cy = kgH/2+kgOffY;
   kgHovered = null;
-  for (const n of kgNodes) {
-    const nx = cx + n.x + Math.sin(kgTime + n.id * 0.8) * 2;
-    const ny = cy + n.y + Math.cos(kgTime + n.id * 0.6) * 2;
-    if (Math.sqrt((mx-nx)**2 + (my-ny)**2) < n.r + 5) {
-      kgHovered = n; kgCanvas.style.cursor = 'pointer'; break;
-    }
+  for(const n of kgNodes){
+    const nx=cx+n.x+Math.sin(kgTime+n.id*0.8)*2, ny=cy+n.y+Math.cos(kgTime+n.id*0.6)*2;
+    if(Math.sqrt((mx-nx)**2+(my-ny)**2)<n.r+5){kgHovered=n;kgCanvas.style.cursor='pointer';break;}
   }
-  if (!kgHovered) kgCanvas.style.cursor = 'grab';
+  if(!kgHovered)kgCanvas.style.cursor='grab';
 }
-
 function kgClick() {
-  if (!kgHovered) return;
+  if(!kgHovered)return;
   const el = document.getElementById('kg-detail');
-  const detail = kgDetails[kgHovered.l] || `Node: ${kgHovered.l}`;
-  const groupLabels = { identity:'Identity & Training', skill:'Technical Skill', work:'Portfolio Work', genre:'Genre & Market', platform:'Platform & Channel', trait:'Artistic Trait' };
-  el.innerHTML = `<h4>${kgHovered.l}</h4><p style="color:var(--dim);font-size:0.7rem;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.1em;">${groupLabels[kgHovered.g]}</p><p style="color:var(--muted);">${detail}</p>`;
+  const detail = kgDetails[kgHovered.l]||`Node: ${kgHovered.l}`;
+  const gl = {identity:'Identity & Training',skill:'Technical Skill',work:'Portfolio Work',genre:'Genre & Market',platform:'Platform & Channel',trait:'Artistic Trait'};
+  el.innerHTML = `<h4>${kgHovered.l}</h4><p style="color:var(--dim);font-size:0.7rem;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.1em;">${gl[kgHovered.g]}</p><p style="color:var(--muted);">${detail}</p>`;
 }
 </script>
-
 </body>
 </html>
